@@ -1,4 +1,4 @@
-const getUsersOpt = {
+const getTasksOpt = {
   schema: {
     response: {
       200: {
@@ -8,11 +8,11 @@ const getUsersOpt = {
       }
     }
   },
-  handler(req, reply) {
-    reply.send([]);
+  handler(req, reply){
+    reply.send('some text')
   }
-};
-const getUserOpt = {
+}
+const getTaskOpt = {
   schema: {
     response: {
       200: {
@@ -22,17 +22,17 @@ const getUserOpt = {
       }
     }
   },
-  handler(req, reply) {
-    reply.send([]);
+  handler(req, reply){
+    reply.send('some text')
   }
-};
-const postUserOpt = {
+}
+const postTaskOpt = {
   schema: {
     body: {
       type: 'object',
-      required: [ 'key' ],
+      required: ['key'],
       properties: {
-        key: { type: 'string' }
+        key: {type: 'string'}
       }
     },
     response: {
@@ -43,17 +43,17 @@ const postUserOpt = {
       }
     }
   },
-  handler(req, reply) {
-    reply.send([]);
+  handler(req, reply){
+    reply.send('some text')
   }
-};
-const putUserOpt = {
+}
+const putTaskOpt = {
   schema: {
     body: {
       type: 'object',
-      required: [ 'key' ],
+      required: ['key'],
       properties: {
-        key: { type: 'string' }
+        key: {type: 'string'}
       }
     },
     response: {
@@ -64,11 +64,11 @@ const putUserOpt = {
       }
     }
   },
-  handler(req, reply) {
-    reply.send('some text');
+  handler(req, reply){
+    reply.send('some text')
   }
-};
-const deleteUserOpt = {
+}
+const deleteTaskOpt = {
   schema: {
     response: {
       200: {
@@ -78,11 +78,11 @@ const deleteUserOpt = {
       }
     }
   },
-  handler(req, reply) {
-    reply.send([]);
+  handler(req, reply){
+    reply.send('some text')
   }
-};
+}
 
 module.exports = {
-  getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt
-};
+  getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt
+}

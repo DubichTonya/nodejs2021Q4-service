@@ -1,88 +1,85 @@
+const { getAllBoards, getBoardById, createBoard, updateBoard, deleteBoard } = require('./board.service');
+
+
+const boardObjectProperties = {
+  id: { type: 'string' },
+  title: { type: 'string' },
+  columns: {
+    type: 'array',
+    items: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+        title: { type: 'string' },
+        order: { type: 'number' }
+      }
+    }
+  }
+};
+
+const board = {
+  type: 'object',
+  properties: boardObjectProperties
+};
+
 const getBoardsOpt = {
   schema: {
     response: {
       200: {
-        items: {
-          type: 'array'
-        }
+        type: 'array',
+        items: board
       }
     }
   },
-  handler(req, reply) {
-    reply.send([])
-  }
-}
+  handler: getAllBoards
+};
 const getBoardOpt = {
   schema: {
     response: {
-      200: {
-        items: {
-          type: 'array'
-        }
-      }
+      200: board
     }
   },
-  handler(req, reply) {
-    reply.send([])
-  }
-}
+  handler: getBoardById
+};
 const postBoardOpt = {
   schema: {
     body: {
       type: 'object',
-      required: ['key'],
-      properties: {
-        key: {type: 'string'}
-      }
+      required: [ 'title', 'columns' ],
+      properties: boardObjectProperties
     },
     response: {
-      200: {
-        items: {
-          type: 'array'
-        }
-      }
+      201: board
     }
   },
-  handler(req, reply) {
-    reply.send([])
-  }
-}
+  handler: createBoard
+};
 const putBoardOpt = {
   schema: {
     body: {
       type: 'object',
-      required: ['key'],
-      properties: {
-        key: {type: 'string'}
-      }
+      required: [ 'title', 'columns' ],
+      properties: boardObjectProperties
     },
     response: {
-      200: {
-        items: {
-          type: 'array'
-        }
-      }
+      200: board
     }
   },
-  handler(req, reply) {
-    reply.send([])
-  }
-}
+  handler: updateBoard
+};
 const deleteBoardOpt = {
   schema: {
     response: {
       200: {
         items: {
-          type: 'array'
+          type: 'string'
         }
       }
     }
   },
-  handler(req, reply) {
-    reply.send([])
-  }
-}
+  handler: deleteBoard
+};
 
 module.exports = {
   getBoardsOpt, getBoardOpt, deleteBoardOpt, postBoardOpt, putBoardOpt
-}
+};

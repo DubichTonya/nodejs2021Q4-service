@@ -1,86 +1,79 @@
+const { getAllUsers, getUserById, createUser, updateUser, deleteUser } = require('./user.service');
+
+const userObjectResponse = {
+  id: { type: 'string' },
+  name: { type: 'string' },
+  login: { type: 'string' }
+
+};
+
+const userObjectProperties = {
+  name: { type: 'string' },
+  login: { type: 'string' },
+  password: { type: 'string' }
+};
+
+const user = {
+  type: 'object',
+  properties: userObjectResponse
+};
+
 const getUsersOpt = {
   schema: {
     response: {
       200: {
-        items: {
-          type: 'array'
-        }
+        type: 'array',
+        items: user
       }
     }
   },
-  handler(req, reply) {
-    reply.send([]);
-  }
+  handler: getAllUsers
 };
 const getUserOpt = {
   schema: {
     response: {
-      200: {
-        items: {
-          type: 'array'
-        }
-      }
+      200: user
     }
   },
-  handler(req, reply) {
-    reply.send([]);
-  }
+  handler: getUserById
 };
 const postUserOpt = {
   schema: {
     body: {
       type: 'object',
-      required: [ 'key' ],
-      properties: {
-        key: { type: 'string' }
-      }
+      required: [ 'name', 'login', 'password' ],
+      properties: userObjectProperties
     },
     response: {
-      200: {
-        items: {
-          type: 'array'
-        }
-      }
+      201: user
     }
   },
-  handler(req, reply) {
-    reply.send([]);
-  }
+  handler: createUser
 };
 const putUserOpt = {
   schema: {
     body: {
       type: 'object',
-      required: [ 'key' ],
-      properties: {
-        key: { type: 'string' }
-      }
+      required: [ 'name', 'login', 'password' ],
+      properties: userObjectProperties
     },
     response: {
-      200: {
-        items: {
-          type: 'array'
-        }
-      }
+      200: user
     }
   },
-  handler(req, reply) {
-    reply.send('some text');
-  }
+  handler: updateUser
 };
 const deleteUserOpt = {
   schema: {
     response: {
       200: {
         items: {
-          type: 'array'
+          type: 'string'
         }
       }
     }
   },
-  handler(req, reply) {
-    reply.send([]);
-  }
+  handler: deleteUser
 };
 
 module.exports = {

@@ -1,3 +1,1 @@
-const getAll = async () => [];
-
-module.exports = { getAll };
+module.exports.usersData = [];

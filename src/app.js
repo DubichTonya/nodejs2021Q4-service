@@ -5,7 +5,6 @@ const { boardRoutes } = require('./resources/boards/board.router');
 const { taskRoutes } = require('./resources/tasks/task.router');
 
 
-fastify.register(require('fastify-swagger'), );
 // Declare a route
 fastify.register(userRoutes);
 fastify.register(boardRoutes);

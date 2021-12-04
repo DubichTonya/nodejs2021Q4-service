@@ -6,7 +6,7 @@ function taskRoutes(fastify, options, done) {
 
   fastify.get('/boards/:boardId/tasks/:taskId', getTaskOpt)
 
-  fastify.post('/boards/:boardId/tasks/:taskId', postTaskOpt)
+  fastify.post('/boards/:boardId/tasks', postTaskOpt)
 
   fastify.put('/boards/:boardId/tasks/:taskId', putTaskOpt)
 

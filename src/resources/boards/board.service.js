@@ -41,15 +41,18 @@ async function deleteBoard(req, reply) {
   const boardIndex = boardsData.findIndex(item => item.id === boardId);
 
   if (boardIndex === -1) {
-    reply.code(400).send('Board not found');
+    reply.code(404).send('Board not found');
   } else {
-    delete boardsData[boardIndex];
-
+    boardsData.splice(boardIndex, 1);
     reply.send('Board deleted');
   }
 }
 
+function getBoardsData() {
+  return boardsData
+}
+
 module.exports = {
-  boardsData, getAllBoards, getBoardById, createBoard, updateBoard, deleteBoard
+  getBoardsData, getAllBoards, getBoardById, createBoard, updateBoard, deleteBoard
 };
 

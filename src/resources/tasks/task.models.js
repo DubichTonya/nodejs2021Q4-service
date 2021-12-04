@@ -1,88 +1,78 @@
+const { getAllTasks, getTaskById, createTask, updateTask, deleteTask } = require('./task.service');
+
+
+const taskObjectProperties = {
+  id: {type: 'string'},
+  title: {type: 'string'},
+  order: {type: 'number'},
+  description: {type: 'string'},
+  userId: {type: 'string', nullable: true},
+  boardId: {type: 'string', nullable: true},
+  columnId: {type: 'string', nullable: true},
+};
+
+const task = {
+  type: 'object',
+  properties: taskObjectProperties
+};
+
 const getTasksOpt = {
   schema: {
     response: {
       200: {
-        items: {
-          type: 'array'
-        }
+        type: 'array',
+        items: task
       }
     }
   },
-  handler(req, reply){
-    reply.send('some text')
-  }
-}
+  handler: getAllTasks
+};
 const getTaskOpt = {
   schema: {
     response: {
-      200: {
-        items: {
-          type: 'array'
-        }
-      }
+      200: task
     }
   },
-  handler(req, reply){
-    reply.send('some text')
-  }
-}
+  handler: getTaskById
+};
 const postTaskOpt = {
   schema: {
     body: {
       type: 'object',
-      required: ['key'],
-      properties: {
-        key: {type: 'string'}
-      }
+      required: [ 'title', 'order', 'description', 'userId', 'boardId'],
+      properties: taskObjectProperties
     },
     response: {
-      200: {
-        items: {
-          type: 'array'
-        }
-      }
+      201: task
     }
   },
-  handler(req, reply){
-    reply.send('some text')
-  }
-}
+  handler: createTask
+};
 const putTaskOpt = {
   schema: {
     body: {
       type: 'object',
-      required: ['key'],
-      properties: {
-        key: {type: 'string'}
-      }
+      properties: taskObjectProperties
     },
     response: {
-      200: {
-        items: {
-          type: 'array'
-        }
-      }
+      200: task
     }
   },
-  handler(req, reply){
-    reply.send('some text')
-  }
-}
+  handler: updateTask
+};
 const deleteTaskOpt = {
   schema: {
     response: {
       200: {
         items: {
-          type: 'array'
+          type: 'string'
         }
       }
     }
   },
-  handler(req, reply){
-    reply.send('some text')
-  }
-}
+  handler: deleteTask
+};
 
 module.exports = {
   getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt
-}
+};

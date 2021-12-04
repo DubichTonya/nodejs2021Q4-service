@@ -1,4 +1,4 @@
-const fastify = require('fastify')({ logger: true });
+const fastify = require('fastify')({ logger: false });
 const { PORT } = require('./common/config');
 const { userRoutes } = require('./resources/users/user.router');
 const { boardRoutes } = require('./resources/boards/board.router');

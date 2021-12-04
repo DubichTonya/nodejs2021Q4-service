@@ -70,7 +70,7 @@ const putBoardOpt = {
 const deleteBoardOpt = {
   schema: {
     response: {
-      200: {
+      204: {
         items: {
           type: 'string'
         }

@@ -38,12 +38,10 @@ async function updateUser(req, reply) {
 async function deleteUser(req, reply) {
   const { userId } = req.params;
   const userIndex = usersData.findIndex(item => item.id === userId);
-
   if (userIndex === -1) {
-    reply.code(400).send('User not found');
+    reply.code(401).send('User not found');
   } else {
-    delete usersData[userIndex];
-
+    usersData.splice(userIndex, 1);
     reply.send('User deleted');
   }
 }

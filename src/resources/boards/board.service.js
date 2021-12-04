@@ -11,7 +11,7 @@ async function getBoardById(req, reply) {
   const board = boardsData.find(item => item.id === boardId);
 
   if (!board) {
-    reply.code(400).send('Board not found');
+    reply.code(404).send('Board not found');
   } else {
     reply.send(board);
   }

@@ -63,18 +63,15 @@ async function updateTask(req, reply) {
 }
 
 async function deleteTask(req, reply) {
-  const {boardId, taskId} = req.params;
+  const { taskId } = req.params;
+  const taskIndex = tasksData.findIndex(item => item.id === taskId);
 
-  const findByIndex = tasksData.findIndex(task => task.id === taskId);
-
-  if(findByIndex === -1){
-    reply.code(401).send('Task not found')
-  } else if(tasksData[findByIndex].boardId === boardId){
-      tasksData.splice(findByIndex, 1);
-      reply.code(204).send('Task deleted')
-    } else {
-      reply.code(401).send('Task not found')
-    }
+  if (taskIndex === -1) {
+    reply.code(404).send('Task not found');
+  } else {
+    tasksData.splice(taskIndex, 1);
+    reply.send('Task deleted');
+  }
 }
 
 function getTaskData() {

@@ -45,12 +45,13 @@ async function deleteUser(req, reply) {
     reply.code(401).send('User not found');
   } else {
     usersData.splice(userIndex, 1);
-    
-    const taskData = getTaskData().map((item) => {
+
+    const taskData = getTaskData();
+
+    taskData.forEach((item, index) => {
       if(item.userId === userId){
-        item.userId = null;
+        taskData[index].userId = null;
       }
-      return item;
     });
     fs.writeFileSync(path.resolve(__dirname, '../tasks/task.memory.repository.txt'), JSON.stringify(taskData))
     reply.send('User deleted');

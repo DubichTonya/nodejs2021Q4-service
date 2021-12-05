@@ -1,6 +1,9 @@
 const uuid = require('uuid');
+const fs = require('fs');
+const path = require('path');
 const {getBoardsData} = require('../boards/board.service')
-const { tasksData } = require('./task.memory.repository');
+
+const tasksData = JSON.parse(fs.readFileSync(path.resolve(__dirname, './task.memory.repository.txt')));
 
 async function getAllTasks(req, reply) {
   const {boardId} = req.params;
@@ -78,7 +81,10 @@ function getTaskData() {
   return tasksData;
 }
 
-module.exports = {
-  getTaskData, getAllTasks, getTaskById, createTask, updateTask, deleteTask
-};
+function getTaskDataForBoard() {
+  return tasksData;
+}
 
+module.exports = {
+  getTaskDataForBoard, getTaskData, getAllTasks, getTaskById, createTask, updateTask, deleteTask
+};

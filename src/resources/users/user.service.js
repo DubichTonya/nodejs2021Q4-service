@@ -48,7 +48,6 @@ async function deleteUser(req, reply) {
     
     const taskData = getTaskData().map((item) => {
       if(item.userId === userId){
-        // eslint-disable-next-line no-param-reassign
         item.userId = null;
       }
       return item;

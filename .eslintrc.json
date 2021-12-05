@@ -29,6 +29,6 @@
     "no-underscore-dangle": "off",
     "import/prefer-default-export": "off",
     "eslint-disable-next-line": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": [2, { "props": false }]
   }
 }

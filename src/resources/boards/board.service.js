@@ -1,6 +1,7 @@
 const uuid = require('uuid');
 
 let { boardsData } = require('./board.memory.repository');
+const { deleteTasksWithBoard } = require('../tasks/task.memory.repository');
 
 async function getAllBoards(req, reply) {
   reply.send(boardsData);
@@ -44,6 +45,7 @@ async function deleteBoard(req, reply) {
     reply.code(404).send('Board not found');
   } else {
     boardsData.splice(boardIndex, 1);
+    deleteTasksWithBoard(boardId);
     reply.send('Board deleted');
   }
 }

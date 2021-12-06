@@ -1,8 +1,6 @@
-const fs = require('fs');
-const path = require('path');
 const uuid = require('uuid');
 let { usersData } = require('./user.memory.repository');
-const { getTaskData } = require('../tasks/task.service');
+const { changeUserIdInTasks } = require('../tasks/task.memory.repository');
 
 async function getAllUsers(req, reply) {
   reply.send(usersData);
@@ -45,15 +43,7 @@ async function deleteUser(req, reply) {
     reply.code(401).send('User not found');
   } else {
     usersData.splice(userIndex, 1);
-
-    const taskData = getTaskData();
-
-    taskData.forEach((item, index) => {
-      if(item.userId === userId){
-        taskData[index].userId = null;
-      }
-    });
-    fs.writeFileSync(path.resolve(__dirname, '../tasks/task.memory.repository.txt'), JSON.stringify(taskData))
+    changeUserIdInTasks(userId)
     reply.send('User deleted');
   }
 }

@@ -1,14 +1,15 @@
 const uuid = require('uuid');
-const fs = require('fs');
-const path = require('path');
 const {getBoardsData} = require('../boards/board.service')
+const {getTaskData, getTaskByBoardId, getTaskByTaskId, addTask, getTaskIndexByTaskId, deleteTaskFromTasks,
+  updateTaskDataByIndex
+} = require('./task.memory.repository')
 
-const tasksData = JSON.parse(fs.readFileSync(path.resolve(__dirname, './task.memory.repository.txt')));
+const tasksData = getTaskData();
 
 async function getAllTasks(req, reply) {
   const {boardId} = req.params;
 
-  const tasks = tasksData.filter(item => item.boardId === boardId);
+  const tasks = getTaskByBoardId(boardId);
   if(tasks){
     reply.send(tasks)
   } else {
@@ -19,7 +20,7 @@ async function getAllTasks(req, reply) {
 
 async function getTaskById(req, reply) {
   const {boardId, taskId} = req.params;
-  const taskById = tasksData.find((task => task.id === taskId));
+  const taskById = getTaskByTaskId(taskId);
   if(taskById && taskById.boardId === boardId){
     reply.code(200).send(taskById)
   } else {
@@ -40,7 +41,7 @@ async function createTask(req, reply) {
       ...req.body
     }
     newTask.boardId = boardId;
-    tasksData.push(newTask);
+    addTask(newTask);
     reply.code(201).send(newTask)
   } else {
     reply.code(401).send('Board not found')
@@ -50,15 +51,13 @@ async function createTask(req, reply) {
 
 async function updateTask(req, reply) {
   const {boardId, taskId} = req.params;
-
-  const findByIndex = tasksData.findIndex(task => task.id === taskId);
+  const findByIndex = getTaskIndexByTaskId(taskId);
 
   if(findByIndex === -1){
     reply.code(404).send('Task not found')
   } else if(tasksData[findByIndex].boardId === boardId){
-      tasksData[findByIndex] = {...req.body, id: taskId, boardId}
-      const task = tasksData[findByIndex];
-      reply.send(task);
+      updateTaskDataByIndex(findByIndex, req.body, taskId, boardId);
+      reply.send(tasksData[findByIndex]);
     } else {
       reply.code(404).send('Task not found')
     }
@@ -67,24 +66,16 @@ async function updateTask(req, reply) {
 
 async function deleteTask(req, reply) {
   const { taskId } = req.params;
-  const taskIndex = tasksData.findIndex(item => item.id === taskId);
+  const taskIndex = getTaskIndexByTaskId(taskId);
 
   if (taskIndex === -1) {
     reply.code(404).send('Task not found');
   } else {
-    tasksData.splice(taskIndex, 1);
+    deleteTaskFromTasks(taskIndex);
     reply.send('Task deleted');
   }
 }
 
-function getTaskData() {
-  return tasksData;
-}
-
-function getTaskDataForBoard() {
-  return tasksData;
-}
-
 module.exports = {
-  getTaskDataForBoard, getTaskData, getAllTasks, getTaskById, createTask, updateTask, deleteTask
+  getAllTasks, getTaskById, createTask, updateTask, deleteTask
 };

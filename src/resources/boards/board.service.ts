@@ -1,3 +1,4 @@
+export {}
 const uuid = require('uuid');
 
 const { getBoardData, addBoard, deleteBoardFromData, updateBoardInData, findBoardById, findBoardByIndex } = require('./board.memory.repository');

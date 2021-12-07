@@ -1,3 +1,4 @@
+export {}
 const { getAllBoards, getBoardById, createBoard, updateBoard, deleteBoard } = require('./board.service');
 
 

@@ -1,3 +1,4 @@
+export {}
 const fastify = require('fastify')({ logger: false });
 const { PORT } = require('./common/config');
 const { userRoutes } = require('./resources/users/user.router');

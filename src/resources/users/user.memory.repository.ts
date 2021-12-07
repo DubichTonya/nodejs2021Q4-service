@@ -1,3 +1,4 @@
+export {}
 const userData = [];
 
 function getUserData() {

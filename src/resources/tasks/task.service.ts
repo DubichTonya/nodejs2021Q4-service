@@ -1,3 +1,4 @@
+export {}
 const uuid = require('uuid');
 const {getBoardData} = require('../boards/board.memory.repository')
 const {getTaskData, getTaskByBoardId, getTaskByTaskId, addTask, getTaskIndexByTaskId, deleteTaskFromTasks,

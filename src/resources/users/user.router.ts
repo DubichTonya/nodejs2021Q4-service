@@ -1,3 +1,4 @@
+export {}
 const { getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt } = require('./user.model');
 
 function userRoutes(fastify, options, done) {

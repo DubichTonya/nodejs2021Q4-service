@@ -1,3 +1,4 @@
+export {}
 const {getBoardsOpt, getBoardOpt, deleteBoardOpt, postBoardOpt, putBoardOpt} = require('./board.models')
 
 function boardRoutes(fastify, options, done) {

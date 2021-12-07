@@ -1,7 +1,9 @@
 const uuid = require('uuid');
 
-let { boardsData } = require('./board.memory.repository');
+const { getBoardData, addBoard, deleteBoardFromData, updateBoardInData, findBoardById, findBoardByIndex } = require('./board.memory.repository');
 const { deleteTasksWithBoard } = require('../tasks/task.memory.repository');
+
+const boardsData = getBoardData();
 
 async function getAllBoards(req, reply) {
   reply.send(boardsData);
@@ -9,7 +11,7 @@ async function getAllBoards(req, reply) {
 
 async function getBoardById(req, reply) {
   const { boardId } = req.params;
-  const board = boardsData.find(item => item.id === boardId);
+  const board =  findBoardById(boardId);
 
   if (!board) {
     reply.code(404).send('Board not found');
@@ -20,18 +22,18 @@ async function getBoardById(req, reply) {
 
 async function createBoard(req, reply) {
   const board = { ...req.body, id: uuid.v4() };
-  boardsData = [ ...boardsData, board ];
+  addBoard(board);
 
   reply.code(201).send(board);
 }
 
 async function updateBoard(req, reply) {
   const { boardId } = req.params;
-  const boardIndex = boardsData.findIndex(item => item.id === boardId);
+  const boardIndex = findBoardByIndex(boardId)
   if (boardIndex === -1) {
     reply.code(400).send('Board not found');
   } else {
-    boardsData[boardIndex] = { ...boardsData[boardIndex], ...req.body };
+    updateBoardInData(boardIndex, req);
 
     reply.send(boardsData[boardIndex]);
   }
@@ -39,22 +41,18 @@ async function updateBoard(req, reply) {
 
 async function deleteBoard(req, reply) {
   const { boardId } = req.params;
-  const boardIndex = boardsData.findIndex(item => item.id === boardId);
+  const boardIndex = findBoardByIndex(boardId)
 
   if (boardIndex === -1) {
     reply.code(404).send('Board not found');
   } else {
-    boardsData.splice(boardIndex, 1);
+    deleteBoardFromData(boardIndex);
     deleteTasksWithBoard(boardId);
     reply.send('Board deleted');
   }
 }
 
-function getBoardsData() {
-  return boardsData
-}
-
 module.exports = {
-  getBoardsData, getAllBoards, getBoardById, createBoard, updateBoard, deleteBoard
+  getAllBoards, getBoardById, createBoard, updateBoard, deleteBoard
 };
 

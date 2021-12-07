@@ -1,5 +1,5 @@
 const uuid = require('uuid');
-const {getBoardsData} = require('../boards/board.service')
+const {getBoardData} = require('../boards/board.memory.repository')
 const {getTaskData, getTaskByBoardId, getTaskByTaskId, addTask, getTaskIndexByTaskId, deleteTaskFromTasks,
   updateTaskDataByIndex
 } = require('./task.memory.repository')
@@ -31,7 +31,7 @@ async function getTaskById(req, reply) {
 }
 
 async function createTask(req, reply) {
-  const boardsData = getBoardsData();
+  const boardsData = getBoardData();
   const {boardId} = req.params;
   const findBoardById = boardsData.find(board => board.id === boardId);
 

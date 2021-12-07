@@ -1,6 +1,8 @@
 const uuid = require('uuid');
-let { usersData } = require('./user.memory.repository');
+const { getUserData, addUser, deleteUserFromData, updateUserInData, findUserById, findUserByIndex } = require('./user.memory.repository');
 const { changeUserIdInTasks } = require('../tasks/task.memory.repository');
+
+const usersData = getUserData();
 
 async function getAllUsers(req, reply) {
   reply.send(usersData);
@@ -8,7 +10,7 @@ async function getAllUsers(req, reply) {
 
 async function getUserById(req, reply) {
   const { userId } = req.params;
-  const user = usersData.find(item => item.id === userId);
+  const user = findUserById(userId)
 
   if (!user) {
     reply.code(400).send('User not found');
@@ -19,30 +21,28 @@ async function getUserById(req, reply) {
 
 async function createUser(req, reply) {
   const user = { ...req.body, id: uuid.v4() };
-  usersData = [ ...usersData, user ];
-
+  addUser(user)
   reply.code(201).send(user);
 }
 
 async function updateUser(req, reply) {
   const { userId } = req.params;
-  const userIndex = usersData.findIndex(item => item.id === userId);
+  const userIndex = findUserByIndex(userId);
   if (userIndex === -1) {
     reply.code(400).send('User not found');
   } else {
-    usersData[userIndex] = { ...usersData[userIndex], ...req.body };
-
+    updateUserInData(userIndex, req)
     reply.send(usersData[userIndex]);
   }
 }
 
 async function deleteUser(req, reply) {
   const { userId } = req.params;
-  const userIndex = usersData.findIndex(item => item.id === userId);
+  const userIndex = findUserByIndex(userId)
   if (userIndex === -1) {
     reply.code(401).send('User not found');
   } else {
-    usersData.splice(userIndex, 1);
+    deleteUserFromData(userIndex)
     changeUserIdInTasks(userId)
     reply.send('User deleted');
   }

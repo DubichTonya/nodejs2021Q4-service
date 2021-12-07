@@ -1,6 +1,6 @@
 const uuid = require('uuid');
-const { getUserData, addUser, deleteUserFromData, updateUserInData, findUserById, findUserByIndex } = require('./user.memory.repository');
-const { changeUserIdInTasks } = require('../tasks/task.memory.repository');
+const { getUserData, addUser, deleteUserFromData, updateUserInData, findUserById, findUserByIndex } = require('./user.memory.repository.ts');
+const { changeUserIdInTasks } = require('../tasks/task.memory.repository.ts');
 
 const usersData = getUserData();
 

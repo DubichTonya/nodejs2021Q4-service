@@ -1,5 +1,5 @@
 export {}
-const { getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt } = require('./user.model');
+const { getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt } = require('./user.model.ts');
 
 function userRoutes(fastify, options, done) {
 

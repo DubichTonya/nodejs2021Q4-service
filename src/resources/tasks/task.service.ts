@@ -1,9 +1,9 @@
 export {}
 const uuid = require('uuid');
-const {getBoardData} = require('../boards/board.memory.repository')
+const {getBoardData} = require('../boards/board.memory.repository.ts')
 const {getTaskData, getTaskByBoardId, getTaskByTaskId, addTask, getTaskIndexByTaskId, deleteTaskFromTasks,
   updateTaskDataByIndex
-} = require('./task.memory.repository')
+} = require('./task.memory.repository.ts')
 
 const tasksData = getTaskData();
 

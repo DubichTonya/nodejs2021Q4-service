@@ -1,5 +1,5 @@
 export {}
-const { getAllBoards, getBoardById, createBoard, updateBoard, deleteBoard } = require('./board.service');
+const { getAllBoards, getBoardById, createBoard, updateBoard, deleteBoard } = require('./board.service.ts');
 
 
 const boardObjectProperties = {

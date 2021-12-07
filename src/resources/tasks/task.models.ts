@@ -1,5 +1,5 @@
 export {}
-const { getAllTasks, getTaskById, createTask, updateTask, deleteTask } = require('./task.service');
+const { getAllTasks, getTaskById, createTask, updateTask, deleteTask } = require('./task.service.ts');
 
 
 const taskObjectProperties = {

@@ -1,5 +1,5 @@
 export {}
-const { getAllUsers, getUserById, createUser, updateUser, deleteUser } = require('./user.service');
+const { getAllUsers, getUserById, createUser, updateUser, deleteUser } = require('./user.service.ts');
 
 const userObjectResponse = {
   id: { type: 'string' },

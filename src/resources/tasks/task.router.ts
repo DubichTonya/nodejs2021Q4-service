@@ -1,5 +1,5 @@
 export {}
-const {getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt} = require('./task.models')
+const {getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt} = require('./task.models.ts')
 
 function taskRoutes(fastify, options, done) {
 

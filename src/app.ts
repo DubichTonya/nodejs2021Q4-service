@@ -1,9 +1,9 @@
 export {}
 const fastify = require('fastify')({ logger: false });
 const { PORT } = require('./common/config');
-const { userRoutes } = require('./resources/users/user.router');
-const { boardRoutes } = require('./resources/boards/board.router');
-const { taskRoutes } = require('./resources/tasks/task.router');
+const { userRoutes } = require('./resources/users/user.router.ts');
+const { boardRoutes } = require('./resources/boards/board.router.ts');
+const { taskRoutes } = require('./resources/tasks/task.router.ts');
 
 
 // Declare a route

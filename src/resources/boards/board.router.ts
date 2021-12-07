@@ -1,5 +1,5 @@
 export {}
-const {getBoardsOpt, getBoardOpt, deleteBoardOpt, postBoardOpt, putBoardOpt} = require('./board.models')
+const {getBoardsOpt, getBoardOpt, deleteBoardOpt, postBoardOpt, putBoardOpt} = require('./board.models.ts')
 
 function boardRoutes(fastify, options, done) {
 

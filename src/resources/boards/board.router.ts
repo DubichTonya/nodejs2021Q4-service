@@ -1,7 +1,10 @@
+import { FastifyInstance } from 'fastify';
+
 export {}
+
 const {getBoardsOpt, getBoardOpt, deleteBoardOpt, postBoardOpt, putBoardOpt} = require('./board.models.ts')
 
-function boardRoutes(fastify, options, done) {
+function boardRoutes(fastify: FastifyInstance, options:any, done: () => void) {
 
   fastify.get('/boards', getBoardsOpt)
 

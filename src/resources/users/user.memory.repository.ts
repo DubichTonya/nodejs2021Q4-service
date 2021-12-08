@@ -1,28 +1,39 @@
-export {}
-const userData = [];
+import { FastifyRequest } from 'fastify';
 
-function getUserData() {
+export {}
+
+interface IUser {
+  name?: string;
+  login?: string;
+  password?: string;
+  id?: string;
+}
+
+const userData: IUser[] = [];
+
+function getUserData():IUser[] {
   return userData;
 }
 
-function addUser(user) {
+function addUser(user: IUser): void {
   userData.push(user)
 }
 
-function deleteUserFromData(userIndex) {
+function deleteUserFromData(userIndex: number): void {
   userData.splice(userIndex, 1);
 }
 
-function updateUserInData(userIndex, req) {
-  userData[userIndex] = { ...userData[userIndex], ...req.body };
+function updateUserInData(userIndex: number, req: FastifyRequest) {
+  const body = <IUser>req.body;
+  userData[userIndex] = { ...userData[userIndex], ...body };
 }
 
 
-function findUserById(userId) {
+function findUserById(userId: string): IUser | unknown {
   return userData.find(item => item.id === userId);
 }
 
-function findUserByIndex(userId) {
+function findUserByIndex(userId: string): number {
   return userData.findIndex(item => item.id === userId);
 }
 

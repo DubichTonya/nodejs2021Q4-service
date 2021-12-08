@@ -1,7 +1,8 @@
-export {}
+import { FastifyInstance } from 'fastify';
+
 const { getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt } = require('./user.model.ts');
 
-function userRoutes(fastify, options, done) {
+function userRoutes(fastify: FastifyInstance, options: any, done: () => void) {
 
   fastify.get('/users', getUsersOpt);
 

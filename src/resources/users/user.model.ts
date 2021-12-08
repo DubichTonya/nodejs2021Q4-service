@@ -1,4 +1,5 @@
 export {}
+
 const { getAllUsers, getUserById, createUser, updateUser, deleteUser } = require('./user.service.ts');
 
 const userObjectResponse = {

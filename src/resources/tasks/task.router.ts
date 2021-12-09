@@ -3,7 +3,7 @@ import { FastifyInstance } from 'fastify';
 export {}
 const {getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt} = require('./task.models.ts')
 
-function taskRoutes(fastify: FastifyInstance, options:any, done: () => void) {
+function taskRoutes(fastify: FastifyInstance, options:boolean, done: () => void) {
 
   fastify.get('/boards/:boardId/tasks', getTasksOpt)
 

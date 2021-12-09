@@ -51,7 +51,7 @@ async function updateBoard(req: FastifyRequest, reply: FastifyReply) {
   if (boardIndex === -1) {
     reply.code(400).send('Board not found');
   } else {
-    updateBoardInData(boardIndex);
+    updateBoardInData(boardIndex, req);
     reply.send(boardsData[boardIndex]);
   }
 }

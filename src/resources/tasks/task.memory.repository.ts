@@ -48,8 +48,8 @@ function deleteTasksWithBoard(boardId: string): void{
   taskData = taskData.filter(item => item.boardId !== boardId);
 }
 
-function updateTaskDataByIndex(index: number, body: ITask, taskId: string, boardId: string): void{
-  taskData[index] = {...body, id: taskId, boardId}
+function updateTaskDataByIndex(index: number, body: ITask): void{
+  taskData[index] = {...taskData[index], ...body}
 }
 
 module.exports = {

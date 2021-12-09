@@ -10,7 +10,7 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon",
-    "build": "tsc ./src/server.ts",
+    "build": "tsc",
     "start": "ts-node --files ./src/server.ts",
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
@@ -57,6 +57,7 @@
     "yamljs": "0.3.0"
   },
   "devDependencies": {
+    "@microsoft/tsdoc": "^0.13.2",
     "@types/node": "^16.11.12",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
@@ -69,6 +70,7 @@
     "eslint-plugin-import": "2.25.3",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-tsdoc": "^0.2.14",
     "fastify-tsconfig": "^1.0.1",
     "husky": "^4.3.8",
     "jest": "27.3.1",

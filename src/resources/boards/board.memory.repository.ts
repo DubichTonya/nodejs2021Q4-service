@@ -15,7 +15,7 @@ const boardData: IBoards[] = [];
 
 /**
  * Returns all boards
- * @returns array with boards objects
+ * @returns array with boards or empty array
  */
 
 function getBoardData(): IBoards[] {
@@ -23,8 +23,9 @@ function getBoardData(): IBoards[] {
 }
 
 /**
- * Returns noting. Adding board in array of boards
+ * Adds board in array of boards
  * @param board - board object
+ * @returns Returns noting. Adds board in boards array
  */
 
 function addBoard(board: IBoards): void {
@@ -32,8 +33,9 @@ function addBoard(board: IBoards): void {
 }
 
 /**
- * Returns noting. Deleting board from array of boards
+ * Deletes board from array of boards
  * @param boardIndex - index of board (number)
+ * @returns Returns noting. Finds board by index in boards and delete it
  */
 
 function deleteBoardFromData(boardIndex: number): void {
@@ -41,9 +43,10 @@ function deleteBoardFromData(boardIndex: number): void {
 }
 
 /**
- * Returns noting. Updating board from array of boards
+ * Updates board in array of boards
  * @param boardIndex - index of board (number)
  * @param req - request from server (FastifyRequest)
+ * @returns Returns noting. Changing board object from data which take in request body
  */
 
 function updateBoardInData(boardIndex: number, req: FastifyRequest): void {
@@ -52,9 +55,9 @@ function updateBoardInData(boardIndex: number, req: FastifyRequest): void {
 }
 
 /**
- * Search board by id in array of boards
+ * Searching board by id in array of boards
  * @param boardId - id of board (string)
- * @returns return board object or undefined if not found board
+ * @returns Searching board by id in array and return board or undefined if not found
  */
 
 function findBoardById(boardId: string): IBoards | undefined {
@@ -62,9 +65,9 @@ function findBoardById(boardId: string): IBoards | undefined {
 }
 
 /**
- * Search board index by id in array of boards
+ * Searching board index by id in array of boards
  * @param boardId - id of board (string)
- * @returns return board index (number) or -1 if not found board
+ * @returns Searching board in array and return board index or -1 if not found
  */
 
 function findBoardByIndex(boardId: string): number {

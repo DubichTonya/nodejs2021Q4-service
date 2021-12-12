@@ -6,11 +6,6 @@ const { changeUserIdInTasks } = require('../tasks/task.memory.repository.ts');
 
 const usersData = getUserData();
 
-async function getAllUsers(req:FastifyRequest, reply: FastifyReply) {
-  reply.send(usersData);
-}
-
-
 interface RequestParamsDefault {
   userId: string;
 }
@@ -21,7 +16,25 @@ interface RequestBodyDefault {
   password: string;
 }
 
-async function getUserById(req:FastifyRequest, reply: FastifyReply) {
+/**
+ * Router function which send all users on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After server send reply with users array on client
+ */
+
+async function getAllUsers(req:FastifyRequest, reply: FastifyReply): Promise<void> {
+  reply.send(usersData);
+}
+
+/**
+ * Router function which send user by id on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After server send reply on client with user which we found by id or send error code 400 if we not found user.
+ */
+
+async function getUserById(req:FastifyRequest, reply: FastifyReply): Promise<void> {
   const { userId } = <RequestParamsDefault>req.params;
   const user = findUserById(userId)
 
@@ -32,14 +45,29 @@ async function getUserById(req:FastifyRequest, reply: FastifyReply) {
   }
 }
 
-async function createUser(req:FastifyRequest, reply: FastifyReply) {
+/**
+ * Router function which send user by id on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After success create a new user from body data and add this user in users array, we send new user on client.
+ */
+
+async function createUser(req:FastifyRequest, reply: FastifyReply): Promise<void> {
   const body = <RequestBodyDefault>req.body;
   const user = { ...body, id: uuid.v4() };
   addUser(user)
   reply.code(201).send(user);
 }
 
-async function updateUser(req:FastifyRequest, reply: FastifyReply) {
+/**
+ * Router function which send user by id on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After success updated user from body data we send user on client, or send error with status code 400 if user not found in users array.
+ */
+
+
+async function updateUser(req:FastifyRequest, reply: FastifyReply): Promise<void> {
   const { userId } = <RequestParamsDefault>req.params;
   const userIndex = findUserByIndex(userId);
   if (userIndex === -1) {
@@ -50,7 +78,15 @@ async function updateUser(req:FastifyRequest, reply: FastifyReply) {
   }
 }
 
-async function deleteUser(req:FastifyRequest, reply: FastifyReply) {
+/**
+ * Router function which send user by id on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After success deleted user from users array we change userId in tasks on null and send message on client that the user has been deleted.
+ * If we not found users we send error with status code 401.
+ */
+
+async function deleteUser(req:FastifyRequest, reply: FastifyReply): Promise<void> {
   const { userId } = <RequestParamsDefault>req.params;
   const userIndex = findUserByIndex(userId)
   if (userIndex === -1) {

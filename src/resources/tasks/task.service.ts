@@ -24,8 +24,14 @@ interface RequestBodyDefault {
 
 const tasksData = getTaskData();
 
+/**
+ * Router function which send all tasks on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After server send reply with tasks array on client
+ */
 
-async function getAllTasks(req: FastifyRequest, reply: FastifyReply) {
+async function getAllTasks(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   const {boardId} = <RequestParamsDefault>req.params;
 
   const tasks = getTaskByBoardId(boardId);
@@ -37,7 +43,14 @@ async function getAllTasks(req: FastifyRequest, reply: FastifyReply) {
 
 }
 
-async function getTaskById(req: FastifyRequest, reply: FastifyReply) {
+/**
+ * Router function which send task by id on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After server send reply on client with task which we found by id or send error code 400 if we not found task.
+ */
+
+async function getTaskById(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   const {boardId, taskId} = <RequestParamsDefault>req.params;
   const taskById = getTaskByTaskId(taskId);
   if(taskById && taskById.boardId === boardId){
@@ -47,7 +60,14 @@ async function getTaskById(req: FastifyRequest, reply: FastifyReply) {
   }
 }
 
-async function createTask(req: FastifyRequest, reply: FastifyReply) {
+/**
+ * Router function which send task by id on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After success create a new task from body data and add this task in tasks array, we send new task on client.
+ */
+
+async function createTask(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   const {boardId} = <RequestParamsDefault>req.params;
   const findBoardId = findBoardById(boardId)
 
@@ -66,7 +86,14 @@ async function createTask(req: FastifyRequest, reply: FastifyReply) {
 
 }
 
-async function updateTask(req: FastifyRequest, reply: FastifyReply) {
+/**
+ * Router function which send task by id on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After success updated task from body data we send task on client, or send error with status code 400 if task not found in tasks array.
+ */
+
+async function updateTask(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   const {boardId, taskId} = <RequestParamsDefault>req.params;
   const findByIndex = getTaskIndexByTaskId(taskId);
 
@@ -81,7 +108,15 @@ async function updateTask(req: FastifyRequest, reply: FastifyReply) {
 
 }
 
-async function deleteTask(req: FastifyRequest, reply: FastifyReply) {
+/**
+ * Router function which send task by id on client
+ * @param req - request from server
+ * @param reply - reply from server
+ * @return promise which nothing returns. After success deleted task from tasks array we send message on client that the task has been deleted.
+ * If we not found tasks we send error with status code 404.
+ */
+
+async function deleteTask(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   const { taskId } = <RequestParamsDefault>req.params;
   const taskIndex = getTaskIndexByTaskId(taskId);
 

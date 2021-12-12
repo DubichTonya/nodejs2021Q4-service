@@ -11,10 +11,14 @@ fastify.register(userRoutes);
 fastify.register(boardRoutes);
 fastify.register(taskRoutes);
 
-// Run the server!
-const server = async () => {
+/**
+ * Start server
+ * @return returns promise which nothing returns. Inside function start server and listening it, if we have error we catch it and finish process
+ */
+
+const server = async (): Promise<void> => {
   try {
-    await fastify.listen(PORT)
+    fastify.listen(PORT)
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)

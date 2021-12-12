@@ -2,7 +2,15 @@ import { FastifyInstance } from 'fastify';
 
 const { getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt } = require('./user.model.ts');
 
-function userRoutes(fastify: FastifyInstance, options: boolean, done: () => void) {
+/**
+ * Connecting user routes
+ * @param fastify - fastify instance
+ * @param options - boolean value true if we have options
+ * @param done - callback which nothing return and call after connecting routers
+ * @return returns nothing only connecting routers inside function
+ */
+
+function userRoutes(fastify: FastifyInstance, options: boolean, done: () => void): void {
 
   fastify.get('/users', getUsersOpt);
 

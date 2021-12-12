@@ -1,21 +1,29 @@
 import { FastifyInstance } from 'fastify';
 
-export {}
-const {getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt} = require('./task.models.ts')
+export {};
+const { getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt } = require('./task.models.ts');
 
-function taskRoutes(fastify: FastifyInstance, options:boolean, done: () => void) {
+/**
+ * Connecting user routes
+ * @param fastify - fastify instance
+ * @param options - boolean value true if we have options
+ * @param done - callback which nothing return and call after connecting routers
+ * @return returns nothing only connecting routers inside function
+ */
 
-  fastify.get('/boards/:boardId/tasks', getTasksOpt)
+function taskRoutes(fastify: FastifyInstance, options: boolean, done: () => void): void {
 
-  fastify.get('/boards/:boardId/tasks/:taskId', getTaskOpt)
+    fastify.get('/boards/:boardId/tasks', getTasksOpt);
 
-  fastify.post('/boards/:boardId/tasks', postTaskOpt)
+    fastify.get('/boards/:boardId/tasks/:taskId', getTaskOpt);
 
-  fastify.put('/boards/:boardId/tasks/:taskId', putTaskOpt)
+    fastify.post('/boards/:boardId/tasks', postTaskOpt);
 
-  fastify.delete('/boards/:boardId/tasks/:taskId', deleteTaskOpt)
+    fastify.put('/boards/:boardId/tasks/:taskId', putTaskOpt);
 
-  done()
+    fastify.delete('/boards/:boardId/tasks/:taskId', deleteTaskOpt);
+
+    done();
 
 }
 

@@ -26,7 +26,13 @@
       }
     },
     "node": {
-      "tryExtensions": [".js", ".ts"]
+      "tryExtensions": [".js", ".ts", ".d.ts"],
+      "moduleDirectory": ["node_modules", "src/"],
+      "typescript": {}
+    },
+    "typescript": {
+      "alwaysTryTypes": true,
+      "project": "."
     }
   },
   "extends": [

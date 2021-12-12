@@ -24,6 +24,9 @@
       "node": {
         "extensions": [".js", ".ts"]
       }
+    },
+    "node": {
+      "tryExtensions": [".js", ".ts"]
     }
   },
   "extends": [

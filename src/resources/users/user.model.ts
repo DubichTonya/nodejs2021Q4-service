@@ -1,83 +1,81 @@
-export {}
-
-const { getAllUsers, getUserById, createUser, updateUser, deleteUser } = require('./user.service.ts');
+import { getAllUsers, getUserById, createUser, updateUser, deleteUser } from './user.service';
 
 const userObjectResponse = {
-  id: { type: 'string' },
-  name: { type: 'string' },
-  login: { type: 'string' }
+    id: { type: 'string' },
+    name: { type: 'string' },
+    login: { type: 'string' }
 
 };
 
 const userObjectProperties = {
-  name: { type: 'string' },
-  login: { type: 'string' },
-  password: { type: 'string' }
+    name: { type: 'string' },
+    login: { type: 'string' },
+    password: { type: 'string' }
 };
 
 const user = {
-  type: 'object',
-  properties: userObjectResponse
+    type: 'object',
+    properties: userObjectResponse
 };
 
 const getUsersOpt = {
-  schema: {
-    response: {
-      200: {
-        type: 'array',
-        items: user
-      }
-    }
-  },
-  handler: getAllUsers
+    schema: {
+        response: {
+            200: {
+                type: 'array',
+                items: user
+            }
+        }
+    },
+    handler: getAllUsers
 };
 const getUserOpt = {
-  schema: {
-    response: {
-      200: user
-    }
-  },
-  handler: getUserById
+    schema: {
+        response: {
+            200: user
+        }
+    },
+    handler: getUserById
 };
 const postUserOpt = {
-  schema: {
-    body: {
-      type: 'object',
-      required: [ 'name', 'login', 'password' ],
-      properties: userObjectProperties
+    schema: {
+        body: {
+            type: 'object',
+            required: [ 'name', 'login', 'password' ],
+            properties: userObjectProperties
+        },
+        response: {
+            201: user
+        }
     },
-    response: {
-      201: user
-    }
-  },
-  handler: createUser
+    handler: createUser
 };
 const putUserOpt = {
-  schema: {
-    body: {
-      type: 'object',
-      required: [ 'name', 'login', 'password' ],
-      properties: userObjectProperties
+    schema: {
+        body: {
+            type: 'object',
+            required: [ 'name', 'login', 'password' ],
+            properties: userObjectProperties
+        },
+        response: {
+            200: user
+        }
     },
-    response: {
-      200: user
-    }
-  },
-  handler: updateUser
+    handler: updateUser
 };
 const deleteUserOpt = {
-  schema: {
-    response: {
-      200: {
-        items: {
-          type: 'string'
+    schema: {
+        response: {
+            200: {
+                items: {
+                    type: 'string'
+                }
+            }
         }
-      }
-    }
-  },
-  handler: deleteUser
+    },
+    handler: deleteUser
 };
 
-module.exports = {
-  getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt
+export {
+    getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt
 };

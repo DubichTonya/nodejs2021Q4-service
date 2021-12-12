@@ -1,8 +1,5 @@
-import { FastifyInstance } from 'fastify';
-
-export {}
-
-const {getBoardsOpt, getBoardOpt, deleteBoardOpt, postBoardOpt, putBoardOpt} = require('./board.models.ts')
+import { FastifyInstance, FastifyRegisterOptions } from 'fastify';
+import { getBoardsOpt, getBoardOpt, deleteBoardOpt, postBoardOpt, putBoardOpt } from './board.models';
 
 /**
  * Connecting board routes
@@ -12,20 +9,20 @@ const {getBoardsOpt, getBoardOpt, deleteBoardOpt, postBoardOpt, putBoardOpt} = r
  * @return returns nothing only connecting routers inside function
  */
 
-function boardRoutes(fastify: FastifyInstance, options:boolean, done: () => void) {
+function boardRoutes(fastify: FastifyInstance, options: FastifyRegisterOptions<boolean>, done: () => void) {
 
-  fastify.get('/boards', getBoardsOpt)
+    fastify.get('/boards', getBoardsOpt);
 
-  fastify.get('/boards/:boardId', getBoardOpt)
+    fastify.get('/boards/:boardId', getBoardOpt);
 
-  fastify.post('/boards', postBoardOpt)
+    fastify.post('/boards', postBoardOpt);
 
-  fastify.put('/boards/:boardId', putBoardOpt)
+    fastify.put('/boards/:boardId', putBoardOpt);
 
-  fastify.delete('/boards/:boardId', deleteBoardOpt)
+    fastify.delete('/boards/:boardId', deleteBoardOpt);
 
-  done()
+    done();
 
 }
 
-module.exports = { boardRoutes };
+export { boardRoutes };

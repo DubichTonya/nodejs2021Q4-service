@@ -1,4 +1,3 @@
-export {}
-const server = require('./app.ts');
+import { server } from './app';
 
 server();

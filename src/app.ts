@@ -1,28 +1,30 @@
-export {}
-const fastify = require('fastify')({ logger: false });
-const { PORT } = require('./common/config.ts');
-const { userRoutes } = require('./resources/users/user.router.ts');
-const { boardRoutes } = require('./resources/boards/board.router.ts');
-const { taskRoutes } = require('./resources/tasks/task.router.ts');
+import fastify from 'fastify';
+import { userRoutes } from './resources/users/user.router';
+import { boardRoutes } from './resources/boards/board.router';
+import { taskRoutes } from './resources/tasks/task.router';
+import { PORT } from './common/config';
 
+fastify({ logger: false });
+const Fastify = fastify();
 
 // Declare a route
-fastify.register(userRoutes);
-fastify.register(boardRoutes);
-fastify.register(taskRoutes);
+Fastify.register(userRoutes);
+Fastify.register(boardRoutes);
+Fastify.register(taskRoutes);
 
 /**
  * Start server
- * @return returns promise which nothing returns. Inside function start server and listening it, if we have error we catch it and finish process
+ * @return returns promise which nothing returns. Inside function start server and listening it, if we have error we
+ *     catch it and finish process
  */
 
 const server = async (): Promise<void> => {
-  try {
-    fastify.listen(PORT)
-  } catch (err) {
-    fastify.log.error(err)
-    process.exit(1)
-  }
-}
+    try {
+        await Fastify.listen(PORT);
+    } catch (err) {
+        Fastify.log.error(err);
+        process.exit(1);
+    }
+};
 
-module.exports = server;
+export { server };

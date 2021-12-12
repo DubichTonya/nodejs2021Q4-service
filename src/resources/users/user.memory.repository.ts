@@ -1,12 +1,10 @@
 import { FastifyRequest } from 'fastify';
 
-export {}
-
 interface IUser {
-  name?: string;
-  login?: string;
-  password?: string;
-  id?: string;
+    name?: string;
+    login?: string;
+    password?: string;
+    id?: string;
 }
 
 const userData: IUser[] = [];
@@ -16,8 +14,8 @@ const userData: IUser[] = [];
  * @returns array with users or empty array
  */
 
-function getUserData():IUser[] {
-  return userData;
+function getUserData(): IUser[] {
+    return userData;
 }
 
 /**
@@ -27,7 +25,7 @@ function getUserData():IUser[] {
  */
 
 function addUser(user: IUser): void {
-  userData.push(user)
+    userData.push(user);
 }
 
 /**
@@ -37,7 +35,7 @@ function addUser(user: IUser): void {
  */
 
 function deleteUserFromData(userIndex: number): void {
-  userData.splice(userIndex, 1);
+    userData.splice(userIndex, 1);
 }
 
 /**
@@ -48,8 +46,8 @@ function deleteUserFromData(userIndex: number): void {
  */
 
 function updateUserInData(userIndex: number, req: FastifyRequest) {
-  const body = <IUser>req.body;
-  userData[userIndex] = { ...userData[userIndex], ...body };
+    const body = <IUser>req.body;
+    userData[userIndex] = { ...userData[userIndex], ...body };
 }
 
 /**
@@ -59,7 +57,7 @@ function updateUserInData(userIndex: number, req: FastifyRequest) {
  */
 
 function findUserById(userId: string): IUser | unknown {
-  return userData.find(item => item.id === userId);
+    return userData.find(item => item.id === userId);
 }
 
 /**
@@ -69,9 +67,9 @@ function findUserById(userId: string): IUser | unknown {
  */
 
 function findUserByIndex(userId: string): number {
-  return userData.findIndex(item => item.id === userId);
+    return userData.findIndex(item => item.id === userId);
 }
 
-module.exports = {
-  getUserData, addUser, deleteUserFromData, updateUserInData, findUserById, findUserByIndex
-}
+export {
+    getUserData, addUser, deleteUserFromData, updateUserInData, findUserById, findUserByIndex
+};

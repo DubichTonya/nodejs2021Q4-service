@@ -1,13 +1,13 @@
-export {}
+import { FastifyRequest } from 'fastify';
 
 interface ITask {
-  id?: string;
-  title: string;
-  order: number;
-  description: string;
-  userId: null |  string;
-  boardId: null | string;
-  columnId: null | string;
+    id?: string;
+    title: string;
+    order: number;
+    description: string;
+    userId: null | string;
+    boardId: null | string;
+    columnId: null | string;
 }
 
 let taskData: ITask[] = [];
@@ -18,7 +18,7 @@ let taskData: ITask[] = [];
  */
 
 function getTaskData(): ITask[] {
-  return taskData;
+    return taskData;
 }
 
 /**
@@ -28,7 +28,7 @@ function getTaskData(): ITask[] {
  */
 
 function getTaskByBoardId(boardId: string): ITask[] {
-  return taskData.filter(item => item.boardId === boardId);
+    return taskData.filter(item => item.boardId === boardId);
 }
 
 /**
@@ -38,7 +38,7 @@ function getTaskByBoardId(boardId: string): ITask[] {
  */
 
 function getTaskByTaskId(taskId: string): ITask | undefined {
-  return taskData.find((task => task.id === taskId));
+    return taskData.find((task => task.id === taskId));
 }
 
 /**
@@ -48,7 +48,7 @@ function getTaskByTaskId(taskId: string): ITask | undefined {
  */
 
 function getTaskIndexByTaskId(taskId: string): number {
-  return taskData.findIndex(task => task.id === taskId);
+    return taskData.findIndex(task => task.id === taskId);
 }
 
 /**
@@ -58,7 +58,7 @@ function getTaskIndexByTaskId(taskId: string): number {
  */
 
 function addTask(task: ITask): void {
-  taskData.push(task)
+    taskData.push(task);
 }
 
 
@@ -69,7 +69,7 @@ function addTask(task: ITask): void {
  */
 
 function deleteTaskFromTasks(taskIndex: number): void {
-  taskData.splice(taskIndex, 1);
+    taskData.splice(taskIndex, 1);
 }
 
 /**
@@ -79,11 +79,11 @@ function deleteTaskFromTasks(taskIndex: number): void {
  */
 
 function changeUserIdInTasks(userId: string): void {
-  taskData.forEach((item, index) => {
-  if(item.userId === userId){
-    taskData[index].userId = null;
-  }
-});
+    taskData.forEach((item, index) => {
+        if (item.userId === userId) {
+            taskData[index].userId = null;
+        }
+    });
 }
 
 /**
@@ -92,8 +92,8 @@ function changeUserIdInTasks(userId: string): void {
  * @returns Returns noting. Change array of tasks when filters array by boardId
  */
 
-function deleteTasksWithBoard(boardId: string): void{
-  taskData = taskData.filter(item => item.boardId !== boardId);
+function deleteTasksWithBoard(boardId: string): void {
+    taskData = taskData.filter(item => item.boardId !== boardId);
 }
 
 /**
@@ -103,20 +103,21 @@ function deleteTasksWithBoard(boardId: string): void{
  * @returns Returns noting. Changing data in task from body data
  */
 
-function updateTaskDataByIndex(index: number, body: ITask): void{
-  taskData[index] = {...taskData[index], ...body}
+function updateTaskDataByIndex(index: number, req: FastifyRequest): void {
+    const body = <ITask>req.body;
+    taskData[index] = { ...taskData[index], ...body };
 }
 
-module.exports = {
-  getTaskByBoardId,
-  getTaskByTaskId,
-  getTaskData,
-  addTask,
-  getTaskIndexByTaskId,
-  deleteTaskFromTasks,
-  changeUserIdInTasks,
-  deleteTasksWithBoard,
-  updateTaskDataByIndex
-}
+export {
+    getTaskByBoardId,
+    getTaskByTaskId,
+    getTaskData,
+    addTask,
+    getTaskIndexByTaskId,
+    deleteTaskFromTasks,
+    changeUserIdInTasks,
+    deleteTasksWithBoard,
+    updateTaskDataByIndex
+};
 
 

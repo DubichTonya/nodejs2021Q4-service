@@ -1,14 +1,14 @@
 import { FastifyRequest } from 'fastify';
 
-export {}
 interface column {
-  title: string, order: number
+    title: string,
+    order: number
 }
 
 interface IBoards {
-  id?: string;
-  title: string;
-  columns: column[]
+    id?: string;
+    title: string;
+    columns: column[];
 }
 
 const boardData: IBoards[] = [];
@@ -19,7 +19,7 @@ const boardData: IBoards[] = [];
  */
 
 function getBoardData(): IBoards[] {
-  return boardData;
+    return boardData;
 }
 
 /**
@@ -29,7 +29,7 @@ function getBoardData(): IBoards[] {
  */
 
 function addBoard(board: IBoards): void {
-  boardData.push(board);
+    boardData.push(board);
 }
 
 /**
@@ -39,7 +39,7 @@ function addBoard(board: IBoards): void {
  */
 
 function deleteBoardFromData(boardIndex: number): void {
-  boardData.splice(boardIndex, 1);
+    boardData.splice(boardIndex, 1);
 }
 
 /**
@@ -50,8 +50,8 @@ function deleteBoardFromData(boardIndex: number): void {
  */
 
 function updateBoardInData(boardIndex: number, req: FastifyRequest): void {
-  const body = <IBoards>req.body;
-  boardData[boardIndex] = { ...boardData[boardIndex], ...body };
+    const body = <IBoards>req.body;
+    boardData[boardIndex] = { ...boardData[boardIndex], ...body };
 }
 
 /**
@@ -61,7 +61,7 @@ function updateBoardInData(boardIndex: number, req: FastifyRequest): void {
  */
 
 function findBoardById(boardId: string): IBoards | undefined {
-  return boardData.find(item => item.id === boardId);
+    return boardData.find(item => item.id === boardId);
 }
 
 /**
@@ -71,9 +71,9 @@ function findBoardById(boardId: string): IBoards | undefined {
  */
 
 function findBoardByIndex(boardId: string): number {
-  return boardData.findIndex(item => item.id === boardId);
+    return boardData.findIndex(item => item.id === boardId);
 }
 
-module.exports = {
-  getBoardData, addBoard, deleteBoardFromData, updateBoardInData, findBoardById, findBoardByIndex
-}
+export {
+    getBoardData, addBoard, deleteBoardFromData, updateBoardInData, findBoardById, findBoardByIndex
+};

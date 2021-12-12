@@ -1,6 +1,5 @@
-import { FastifyInstance } from 'fastify';
-
-const { getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt } = require('./user.model.ts');
+import { FastifyInstance, FastifyRegisterOptions } from 'fastify';
+import { getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt } from './user.model';
 
 /**
  * Connecting user routes
@@ -10,20 +9,20 @@ const { getUsersOpt, getUserOpt, deleteUserOpt, postUserOpt, putUserOpt } = requ
  * @return returns nothing only connecting routers inside function
  */
 
-function userRoutes(fastify: FastifyInstance, options: boolean, done: () => void): void {
+function userRoutes(fastify: FastifyInstance, options: FastifyRegisterOptions<boolean>, done: () => void): void {
 
-  fastify.get('/users', getUsersOpt);
+    fastify.get('/users', getUsersOpt);
 
-  fastify.get('/users/:userId', getUserOpt);
+    fastify.get('/users/:userId', getUserOpt);
 
-  fastify.post('/users', postUserOpt);
+    fastify.post('/users', postUserOpt);
 
-  fastify.put('/users/:userId', putUserOpt);
+    fastify.put('/users/:userId', putUserOpt);
 
-  fastify.delete('/users/:userId', deleteUserOpt);
+    fastify.delete('/users/:userId', deleteUserOpt);
 
-  done();
+    done();
 
 }
 
-module.exports = { userRoutes };
+export { userRoutes };

@@ -1,7 +1,5 @@
-import { FastifyInstance } from 'fastify';
-
-export {};
-const { getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt } = require('./task.models.ts');
+import { FastifyInstance, FastifyRegisterOptions } from 'fastify';
+import { getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt } from './task.models';
 
 /**
  * Connecting user routes
@@ -11,7 +9,7 @@ const { getTasksOpt, getTaskOpt, deleteTaskOpt, postTaskOpt, putTaskOpt } = requ
  * @return returns nothing only connecting routers inside function
  */
 
-function taskRoutes(fastify: FastifyInstance, options: boolean, done: () => void): void {
+function taskRoutes(fastify: FastifyInstance, options: FastifyRegisterOptions<boolean>, done: () => void): void {
 
     fastify.get('/boards/:boardId/tasks', getTasksOpt);
 
@@ -27,4 +25,4 @@ function taskRoutes(fastify: FastifyInstance, options: boolean, done: () => void
 
 }
 
-module.exports = { taskRoutes };
+export { taskRoutes };

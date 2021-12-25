@@ -4,6 +4,9 @@ import { userRoutes } from './resources/users/user.router';
 import { boardRoutes } from './resources/boards/board.router';
 import { taskRoutes } from './resources/tasks/task.router';
 import { PORT } from './common/config';
+import { Logger } from './logger';
+
+const customLogger = new Logger();
 
 fastify({ logger: false });
 const Fastify = fastify();
@@ -28,6 +31,15 @@ Fastify.register(fastifySwagger, {
 Fastify.register(userRoutes);
 Fastify.register(boardRoutes);
 Fastify.register(taskRoutes);
+
+Fastify.addHook('onResponse', (req, reply) => {
+    customLogger.info(`
+    url: ${req.url},
+    query parameters: ${JSON.stringify(req.params)},
+    body: ${req.body},
+    status code: ${reply.statusCode},
+    `)
+})
 
 /**
  * Start server

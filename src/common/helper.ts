@@ -8,11 +8,12 @@ export function createResponseMessage(req: FastifyRequest, reply: FastifyReply):
   `;
 }
 
-export function createErrorMessage(err: Error): string {
+export function createErrorMessage(err: Error, origin?: string): string {
   return `
   id: ${uuid.v4()}
   name: ${err.name}, message: ${err.message}, 
-  stack: ${err.stack}
+  stack: ${err.stack},
+  Exception origin: ${origin || null}
   `;
 }
 

@@ -65,7 +65,7 @@ Fastify.addHook('onError', (req, reply, error, next) => {
 })
 
 process.on('uncaughtException', (err, origin) => {
-    customLogger.error(createErrorMessage(err))
+    customLogger.error(createErrorMessage(err, origin))
     process.exit(1)
 })
 
@@ -88,5 +88,4 @@ const server = async (): Promise<void> => {
         process.exit(1);
     }
 };
-
 export { server };

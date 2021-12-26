@@ -5,7 +5,7 @@ import { boardRoutes } from './resources/boards/board.router';
 import { taskRoutes } from './resources/tasks/task.router';
 import { PORT } from './common/config';
 import { Logger } from './logger';
-import { createResponseMessage } from './common/helper';
+import { createErrorMessage, createPromiseErrorMessage, createResponseMessage } from './common/helper';
 
 const customLogger = new Logger();
 
@@ -63,6 +63,16 @@ Fastify.addHook('onError', (req, reply, error, next) => {
     customLogger.error(createResponseMessage(req, reply))
     next();
 })
+
+process.on('uncaughtException', (err, origin) => {
+    customLogger.error(createErrorMessage(err))
+    process.exit(1)
+})
+
+
+process.on('unhandledRejection', (reason, promise) => {
+    customLogger.error(createPromiseErrorMessage(reason, promise))
+});
 
 /**
  * Start server

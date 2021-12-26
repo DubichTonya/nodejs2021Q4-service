@@ -34,13 +34,34 @@ Fastify.register(boardRoutes);
 Fastify.register(taskRoutes);
 
 Fastify.addHook('onResponse', (req, reply, next) => {
-    customLogger.info(createResponseMessage(req, reply))
+    const firstNumberOfStatusCode = `${reply.statusCode}`[0];
+    switch (firstNumberOfStatusCode) {
+        case '1':
+            customLogger.info(createResponseMessage(req, reply))
+            break;
+        case '2':
+            customLogger.info(createResponseMessage(req, reply))
+            break;
+        case '3':
+            customLogger.info(createResponseMessage(req, reply))
+            break;
+        case '4':
+            customLogger.error(createResponseMessage(req, reply))
+            break;
+        case '5':
+            customLogger.error(createResponseMessage(req, reply))
+            break;
+        default:
+            customLogger.info(createResponseMessage(req, reply))
+            break;
+    }
+    
     next();
 })
 
 Fastify.addHook('onError', (req, reply, error, next) => {
     customLogger.error(createResponseMessage(req, reply))
-    next()
+    next();
 })
 
 /**

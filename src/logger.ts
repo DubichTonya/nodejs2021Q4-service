@@ -25,7 +25,7 @@ class Logger {
   info(msg: string): void {
     const level = 2;
     if(level <= loggerLevel){
-      console.info(msg);
+      // console.info(msg);
       fs.appendFileSync('./logs/info.log', msg);
     }
   }

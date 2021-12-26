@@ -5,6 +5,7 @@ import { boardRoutes } from './resources/boards/board.router';
 import { taskRoutes } from './resources/tasks/task.router';
 import { PORT } from './common/config';
 import { Logger } from './logger';
+import { createResponseMessage } from './common/helper';
 
 const customLogger = new Logger();
 
@@ -32,13 +33,14 @@ Fastify.register(userRoutes);
 Fastify.register(boardRoutes);
 Fastify.register(taskRoutes);
 
-Fastify.addHook('onResponse', (req, reply) => {
-    customLogger.info(`
-    url: ${req.url},
-    query parameters: ${JSON.stringify(req.params)},
-    body: ${req.body},
-    status code: ${reply.statusCode},
-    `)
+Fastify.addHook('onResponse', (req, reply, next) => {
+    customLogger.info(createResponseMessage(req, reply))
+    next();
+})
+
+Fastify.addHook('onError', (req, reply, error, next) => {
+    customLogger.error(createResponseMessage(req, reply))
+    next()
 })
 
 /**

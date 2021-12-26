@@ -82,7 +82,7 @@ async function updateUser(req: FastifyRequest, reply: FastifyReply): Promise<voi
     if (userIndex === -1) {
         reply.code(400).send('User not found');
     } else {
-        updateUserInData(userIndex, req);
+        await updateUserInData(userIndex, req);
         reply.send(usersData[userIndex]);
     }
 }

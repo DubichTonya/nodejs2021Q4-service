@@ -104,7 +104,7 @@ async function updateTask(req: FastifyRequest, reply: FastifyReply): Promise<voi
     if (findByIndex === -1) {
         reply.code(404).send('Task not found');
     } else if (tasksData[findByIndex].boardId === boardId) {
-        updateTaskDataByIndex(findByIndex, req);
+        await updateTaskDataByIndex(findByIndex, req);
         reply.send(tasksData[findByIndex]);
     } else {
         reply.code(404).send('Task not found');

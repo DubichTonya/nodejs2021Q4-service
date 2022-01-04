@@ -6,5 +6,6 @@
     "lib": ["es2018"],
     "noImplicitAny": true,
     "strict": true,
+    "allowSyntheticDefaultImports": true
   }
 }

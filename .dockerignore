@@ -1,0 +1,11 @@
+.idea
+.git
+Dockerfile
+./db/Dockerfile
+node_modules
+.github
+.vscode
+doc
+package-lock.json
+test
+.gitignore

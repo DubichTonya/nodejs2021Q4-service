@@ -8,4 +8,5 @@ node_modules
 doc
 package-lock.json
 test
+db
 .gitignore

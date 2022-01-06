@@ -6,6 +6,4 @@ node_modules
 .github
 .vscode
 doc
-package-lock.json
-test
 .gitignore

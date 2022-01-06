@@ -1,4 +1,4 @@
-FROM node:erbium-alpine3.15
+FROM node:16-alpine
 
 WORKDIR /app
 COPY package*.json .

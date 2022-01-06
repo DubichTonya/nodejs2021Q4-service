@@ -3,7 +3,7 @@ import { fastifySwagger } from 'fastify-swagger';
 import { userRoutes } from './resources/users/user.router';
 import { boardRoutes } from './resources/boards/board.router';
 import { taskRoutes } from './resources/tasks/task.router';
-import { PORT } from './common/config';
+import { HOST, PORT } from './common/config';
 import { Logger } from './logger';
 import { createErrorMessage, createPromiseErrorMessage, createResponseMessage } from './common/helper';
 
@@ -82,7 +82,7 @@ process.on('unhandledRejection', (reason, promise) => {
 
 const server = async (): Promise<void> => {
     try {
-        await Fastify.listen(PORT);
+        await Fastify.listen(PORT, HOST);
     } catch (err) {
         Fastify.log.error(err);
         process.exit(1);

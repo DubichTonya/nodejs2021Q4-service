@@ -1,5 +1,16 @@
 # RS School REST service
 
+## Work with docker
+1. Install [Docker](https://docs.docker.com/engine/install/)
+2. Go to the root directory of the project
+3. Execute the commands sequentially in the terminal
+    * `docker pull dubich/app`
+    * `docker pull dubich/postgres`
+    * `docker-compose up`
+4. If you want to scan images, run the commands
+    * `docker scan dubich/app`
+    * `docker scan dubich/postgres`
+
 ## Prerequisites
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).

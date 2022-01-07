@@ -24,12 +24,11 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_PORT: ${POSTGRES_PORT}
-      PGDATA=: ${PGDATA}
+      PGDATA: ${PGDATA}
     volumes:
-      - ./db:/var/lib/postgresql
+      - ./db/data:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
-    restart: always
     networks:
       - net
 networks:

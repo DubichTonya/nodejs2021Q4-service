@@ -14,7 +14,7 @@ services:
     networks:
       - net
     volumes:
-      - ./logs:/app/logs:rw
+      - logs:/app/logs:rw
       - ./src:/app/src:rw
   postgres:
     build: ./db
@@ -29,6 +29,7 @@ services:
       - db:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    restart: always
     networks:
       - net
 networks:
@@ -37,4 +38,4 @@ networks:
     driver: bridge
 volumes:
   db:
-    driver: local
+  logs:

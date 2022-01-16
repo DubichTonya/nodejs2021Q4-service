@@ -35,7 +35,7 @@ async function getAllTasks(req: FastifyRequest, reply: FastifyReply): Promise<vo
       reply.send(tasks);
     })
     .catch(() => {
-      reply.code(401).send('Not found');
+      reply.code(404).send('Not found');
     });
 }
 
@@ -54,7 +54,7 @@ async function getTaskById(req: FastifyRequest, reply: FastifyReply): Promise<vo
     .then(async () => {
       const task = await getRepository(TaskEntity).findOne(taskId);
       if (!task) {
-        reply.code(400).send(`task not found`);
+        reply.code(404).send(`task not found`);
       } else {
         reply.code(200).send(task);
       }

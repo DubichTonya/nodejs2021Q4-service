@@ -57,12 +57,12 @@ async function getBoardById(req: FastifyRequest, reply: FastifyReply): Promise<v
         if(board){
           reply.send(board);
         } else {
-          reply.code(400).send('Board not found');
+          reply.code(404).send('Board not found');
         }
     
       })
       .catch(() => {
-        reply.code(400).send('Board not found');
+        reply.code(404).send('Board not found');
       })
     
 }
@@ -147,7 +147,7 @@ async function deleteBoard(req: FastifyRequest, reply: FastifyReply): Promise<vo
         reply.send('Board deleted');
       })
       .catch(() => {
-        reply.code(400).send('Board not found');
+        reply.code(404).send('Board not found');
       })
 }
 

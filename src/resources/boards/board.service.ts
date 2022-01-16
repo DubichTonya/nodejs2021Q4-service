@@ -1,17 +1,12 @@
-import * as uuid from 'uuid';
+import { Connection, getRepository } from 'typeorm';
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { deleteTasksWithBoard } from '../tasks/task.memory.repository';
-import {
-    getBoardData,
-    addBoard,
-    deleteBoardFromData,
-    updateBoardInData,
-    findBoardById,
-    findBoardByIndex
-} from './board.memory.repository';
+import { findBoardById, findBoardByIndex, getBoardData, updateBoardInData } from './board.memory.repository';
+import { connection } from '../../db';
+import { BoardEntity } from '../../entities/Board';
+import { ColumnEntity } from '../../entities/Column';
 
 
-interface column {
+interface IColumn {
     title: string,
     order: number
 }
@@ -19,7 +14,7 @@ interface column {
 interface IBoards {
     id?: string;
     title: string;
-    columns: column[];
+    columns: ColumnEntity[];
 }
 
 interface RequestParamsDefault {
@@ -36,7 +31,15 @@ const boardsData = getBoardData();
  */
 
 async function getAllBoards(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    reply.send(boardsData);
+    await connection
+      .then(async () => {
+          const boards = await getRepository(BoardEntity).find({relations: ["columns"]});
+          reply.send(boards);
+      })
+      .catch((err) => {
+          reply.code(500).send(err.message)
+      })
+
 }
 
 /**
@@ -66,12 +69,35 @@ async function getBoardById(req: FastifyRequest, reply: FastifyReply): Promise<v
  *     array, we send new board on client.
  */
 
-async function createBoard(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const body = <IBoards>req.body;
-    const board = { ...body, id: uuid.v4() };
-    addBoard(board);
+async function createColumn(item: IColumn, c: Connection, board: BoardEntity){
+    const column = await getRepository(ColumnEntity).create({
+        title: item.title,
+        order: item.order,
+        board
+    });
+    await c.manager.save(column);
+}
 
-    reply.code(201).send(board);
+async function createBoard(req: FastifyRequest, reply: FastifyReply): Promise<void> {
+    const {title, columns} = <IBoards>req.body;
+    let board: BoardEntity;
+    await connection
+      .then(async (c) => {
+          board = new BoardEntity();
+          board.title = title;
+          board.columns = columns;
+          await c.manager.save(board);
+
+          columns?.forEach((item) => {
+              createColumn(item, c, board)
+          })
+
+          reply.code(201).send(board)
+
+      })
+      .catch((error) => {
+          reply.code(500).send(error.message)
+      })
 }
 
 /**
@@ -104,15 +130,15 @@ async function updateBoard(req: FastifyRequest, reply: FastifyReply): Promise<vo
 
 async function deleteBoard(req: FastifyRequest, reply: FastifyReply): Promise<void> {
     const { boardId } = <RequestParamsDefault>req.params;
-    const boardIndex = findBoardByIndex(boardId);
-
-    if (boardIndex === -1) {
-        reply.code(404).send('Board not found');
-    } else {
-        deleteBoardFromData(boardIndex);
-        deleteTasksWithBoard(boardId);
+    
+    await connection
+      .then(async () => {
+        await getRepository(BoardEntity).delete(boardId);
         reply.send('Board deleted');
-    }
+      })
+      .catch(() => {
+        reply.code(404).send('Board not found');
+      })
 }
 
 export {

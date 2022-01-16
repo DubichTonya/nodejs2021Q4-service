@@ -1,11 +1,11 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import * as uuid from 'uuid';
-import {
-    getTaskData, getTaskByBoardId, getTaskByTaskId, addTask, getTaskIndexByTaskId, deleteTaskFromTasks,
-    updateTaskDataByIndex
-} from './task.memory.repository';
-
-import { findBoardById } from '../boards/board.memory.repository';
+import { getTaskByTaskId, getTaskData, getTaskIndexByTaskId, updateTaskDataByIndex } from './task.memory.repository';
+import { connection } from '../../db';
+import { getRepository } from 'typeorm';
+import { TaskEntity } from '../../entities/Task';
+import { BoardEntity } from '../../entities/Board';
+import { UserEntity } from '../../entities/User';
+import { ColumnEntity } from '../../entities/Column';
 
 
 interface RequestParamsDefault {
@@ -17,9 +17,9 @@ interface RequestBodyDefault {
     title: string;
     order: number;
     description: string;
-    userId: string | null;
-    boardId: string | null;
-    columnId: string | null;
+    userId: string;
+    boardId: string;
+    columnId: string;
 }
 
 
@@ -34,14 +34,15 @@ const tasksData = getTaskData();
 
 async function getAllTasks(req: FastifyRequest, reply: FastifyReply): Promise<void> {
     const { boardId } = <RequestParamsDefault>req.params;
-
-    const tasks = getTaskByBoardId(boardId);
-    if (tasks) {
-        reply.send(tasks);
-    } else {
-        reply.code(401).send('Not found');
-    }
-
+    
+    await connection
+      .then(async () => {
+          const tasks = await getRepository(TaskEntity).find({where: {boardId}});
+          reply.send(tasks);
+      })
+      .catch(() => {
+          reply.code(401).send('Not found');
+      })
 }
 
 /**
@@ -71,21 +72,47 @@ async function getTaskById(req: FastifyRequest, reply: FastifyReply): Promise<vo
  */
 
 async function createTask(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const { boardId } = <RequestParamsDefault>req.params;
-    const findBoardId = findBoardById(boardId);
+    const body = <RequestBodyDefault>req.body;
+    let task: TaskEntity;
+    await connection
+      .then(async () => {
+          task = getRepository(TaskEntity).create({
+              ...body
+          });
+          if(body.boardId){
+              const board = await getRepository(BoardEntity).findOne(body.boardId);
+              task.board = board;
+          }
 
-    if (findBoardId) {
-        const body = <RequestBodyDefault>req.body;
-        const newTask = {
-            id: uuid.v4(),
-            ...body
-        };
-        newTask.boardId = boardId;
-        addTask(newTask);
-        reply.code(201).send(newTask);
-    } else {
-        reply.code(401).send('Board not found');
-    }
+          if(body.userId){
+              const user = await getRepository(UserEntity).findOne(body.userId);
+              task.user = user;
+          }
+
+          if(body.columnId){
+              const column = await getRepository(ColumnEntity).findOne(body.columnId);
+              task.column = column;
+          }
+          
+          await getRepository(TaskEntity).save(task);
+          reply.code(201).send(task);
+      })
+      .catch(() => {
+          reply.code(401).send('Board not found');
+      })
+    
+    // if (findBoardId) {
+    //     const body = <RequestBodyDefault>req.body;
+    //     const newTask = {
+    //         id: uuid.v4(),
+    //         ...body
+    //     };
+    //     newTask.boardId = boardId;
+    //     addTask(newTask);
+    //     reply.code(201).send(newTask);
+    // } else {
+    //     reply.code(401).send('Board not found');
+    // }
 
 }
 
@@ -122,14 +149,15 @@ async function updateTask(req: FastifyRequest, reply: FastifyReply): Promise<voi
 
 async function deleteTask(req: FastifyRequest, reply: FastifyReply): Promise<void> {
     const { taskId } = <RequestParamsDefault>req.params;
-    const taskIndex = getTaskIndexByTaskId(taskId);
-
-    if (taskIndex === -1) {
-        reply.code(404).send('Task not found');
-    } else {
-        deleteTaskFromTasks(taskIndex);
-        reply.send('Task deleted');
-    }
+    
+    await connection
+      .then(async () => {
+          await getRepository(TaskEntity).delete(taskId);
+          reply.send('Task deleted');
+      })
+      .catch(() => {
+          reply.code(404).send('Task not found');
+      })
 }
 
 export {

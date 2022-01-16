@@ -1,14 +1,8 @@
-import * as uuid from 'uuid';
+import { getRepository } from 'typeorm';
 import { FastifyReply, FastifyRequest } from 'fastify';
-import {
-    getUserData,
-    addUser,
-    deleteUserFromData,
-    updateUserInData,
-    findUserById,
-    findUserByIndex
-} from './user.memory.repository';
-import { changeUserIdInTasks } from '../tasks/task.memory.repository';
+import { findUserById, findUserByIndex, getUserData, updateUserInData } from './user.memory.repository';
+import { UserEntity } from '../../entities/User';
+import { connection } from '../../db';
 
 const usersData = getUserData();
 
@@ -30,7 +24,15 @@ interface RequestBodyDefault {
  */
 
 async function getAllUsers(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    reply.send(usersData);
+    await connection
+      .then(async () => {
+          const users = await getRepository(UserEntity).find();
+          reply.send(users);
+      })
+      .catch((err) => {
+          reply.code(500).send(err.message)
+      })
+    
 }
 
 /**
@@ -61,10 +63,22 @@ async function getUserById(req: FastifyRequest, reply: FastifyReply): Promise<vo
  */
 
 async function createUser(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const body = <RequestBodyDefault>req.body;
-    const user = { ...body, id: uuid.v4() };
-    addUser(user);
-    reply.code(201).send(user);
+    const {name, login, password} = <RequestBodyDefault>req.body;
+    
+    await connection
+      .then(async () => {
+          const user = await getRepository(UserEntity).create({
+              name,
+              login,
+              password
+          })
+
+          await getRepository(UserEntity).save(user)
+          reply.code(201).send(user);
+      })
+      .catch((err) => {
+          reply.code(500).send(err.message)
+      })
 }
 
 /**
@@ -98,14 +112,15 @@ async function updateUser(req: FastifyRequest, reply: FastifyReply): Promise<voi
 
 async function deleteUser(req: FastifyRequest, reply: FastifyReply): Promise<void> {
     const { userId } = <RequestParamsDefault>req.params;
-    const userIndex = findUserByIndex(userId);
-    if (userIndex === -1) {
-        reply.code(401).send('User not found');
-    } else {
-        deleteUserFromData(userIndex);
-        changeUserIdInTasks(userId);
-        reply.send('User deleted');
-    }
+    
+    await connection
+      .then(async () => {
+          await getRepository(UserEntity).delete(userId);
+          reply.send('User deleted');
+      })
+      .catch(() => {
+          reply.code(401).send('User not found');
+      })
 }
 
 export {

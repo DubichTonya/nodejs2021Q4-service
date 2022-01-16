@@ -27,11 +27,11 @@ export class TaskEntity {
   columnId: string;
 
   @ManyToOne(() => UserEntity, userEntity => userEntity.tasks, {nullable: true, onDelete: 'SET NULL'})
-  user: UserEntity;
+  user: UserEntity | undefined;
 
   @ManyToOne(() => BoardEntity, boardEntity => boardEntity.tasks, {onDelete: 'CASCADE'})
-  board: BoardEntity;
+  board: BoardEntity | undefined;
 
   @ManyToOne(() => ColumnEntity, columnEntity => columnEntity.tasks, {onDelete: 'CASCADE'})
-  column: ColumnEntity;
+  column: ColumnEntity | undefined;
 }

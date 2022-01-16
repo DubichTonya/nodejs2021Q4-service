@@ -1,0 +1,31 @@
+
+  id: 04e9dc96-0c9d-44f4-94f8-6f25f9438b97
+  url: /users, query parameters: {}, body: {"name":"tonya","login":"td","password":"1234"}, status code: 500
+  
+  id: 5ea1159b-51a5-4296-9841-e742604bce9d
+  url: /users, query parameters: {}, body: {"name":"tonya","login":"td","password":"1234"}, status code: 500
+  
+  id: a6853f36-e47e-4add-b050-d47ccf0d06d3
+  url: /users, query parameters: {}, body: {"name":"tonya","login":"td","password":"1234"}, status code: 500
+  
+  id: 7ee16d12-7660-4616-a73e-778c927c3293
+  url: /users, query parameters: {}, body: {"name":"tonya","login":"td","password":"1234"}, status code: 500
+  
+  id: 8525ce96-5d95-4a62-8cb7-82800e13db24
+  'Unhandled Rejection at: {}, reason: UpdateValuesMissingError: Cannot perform update query because update values are not defined. Call "qb.set(...)" method to specify updated values., 
+  
+  id: 942e671f-025c-4a94-9a64-28eb229cc21e
+  'Unhandled Rejection at: {}, reason: UpdateValuesMissingError: Cannot perform update query because update values are not defined. Call "qb.set(...)" method to specify updated values., 
+  
+  id: f9c6b4ac-4e83-425c-8a5a-50a30db09bc6
+  'Unhandled Rejection at: {}, reason: UpdateValuesMissingError: Cannot perform update query because update values are not defined. Call "qb.set(...)" method to specify updated values., 
+  
+  id: b3d05685-555a-427e-9dbf-e8ce6faa63f6
+  'Unhandled Rejection at: {}, reason: UpdateValuesMissingError: Cannot perform update query because update values are not defined. Call "qb.set(...)" method to specify updated values., 
+  
+  id: 1e4d1fb0-f793-4dda-9e10-f93e6294e7b2
+  url: /users/3f387231-2d48-41c8-920f-b2f4f95921df, query parameters: {"userId":"3f387231-2d48-41c8-920f-b2f4f95921df"}, body: null, status code: 400
+  
+  id: 85e8ece4-1fe6-4e09-bf7c-8ba73bed67af
+  url: /boards/b88ff121-8237-4aa2-88fe-be96b0d38814/tasks, query parameters: {"*":"boards/b88ff121-8237-4aa2-88fe-be96b0d38814/tasks"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":"3f387231-2d48-41c8-920f-b2f4f95921df","boardId":"b88ff121-8237-4aa2-88fe-be96b0d38814","columnId":null}, status code: 404
+  

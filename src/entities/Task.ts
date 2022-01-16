@@ -17,21 +17,21 @@ export class TaskEntity {
   @Column()
   description: string;
 
-  @Column({nullable: true})
+  @Column({ nullable: true })
   userId: string;
 
-  @Column({nullable: true})
+  @Column({ nullable: true })
   boardId: string;
 
-  @Column({nullable: true})
+  @Column({ nullable: true })
   columnId: string;
 
-  @ManyToOne(() => UserEntity, userEntity => userEntity.tasks, {nullable: true, onDelete: 'SET NULL'})
+  @ManyToOne(() => UserEntity, userEntity => userEntity.tasks, { nullable: true, onDelete: 'SET NULL' })
   user: UserEntity | undefined;
 
-  @ManyToOne(() => BoardEntity, boardEntity => boardEntity.tasks, {onDelete: 'CASCADE'})
+  @ManyToOne(() => BoardEntity, boardEntity => boardEntity.tasks, { onDelete: 'CASCADE' })
   board: BoardEntity | undefined;
 
-  @ManyToOne(() => ColumnEntity, columnEntity => columnEntity.tasks, {onDelete: 'CASCADE'})
+  @ManyToOne(() => ColumnEntity, columnEntity => columnEntity.tasks, { onDelete: 'CASCADE' })
   column: ColumnEntity | undefined;
 }

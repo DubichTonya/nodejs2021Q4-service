@@ -1,6 +1,5 @@
 import { Connection, getRepository } from 'typeorm';
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { findBoardById, findBoardByIndex, getBoardData, updateBoardInData } from './board.memory.repository';
 import { connection } from '../../db';
 import { BoardEntity } from '../../entities/Board';
 import { ColumnEntity } from '../../entities/Column';
@@ -20,8 +19,6 @@ interface IBoards {
 interface RequestParamsDefault {
     boardId: string;
 }
-
-const boardsData = getBoardData();
 
 /**
  * Router function which send all boards on client
@@ -52,13 +49,22 @@ async function getAllBoards(req: FastifyRequest, reply: FastifyReply): Promise<v
 
 async function getBoardById(req: FastifyRequest, reply: FastifyReply): Promise<void> {
     const { boardId } = <RequestParamsDefault>req.params;
-    const board = findBoardById(boardId);
-
-    if (!board) {
-        reply.code(404).send('Board not found');
-    } else {
-        reply.send(board);
-    }
+    
+    await connection
+      .then(async () => {
+        const board = await getRepository(BoardEntity).findOne(boardId, {relations: ["columns"]});
+        
+        if(board){
+          reply.send(board);
+        } else {
+          reply.code(400).send('Board not found');
+        }
+    
+      })
+      .catch(() => {
+        reply.code(400).send('Board not found');
+      })
+    
 }
 
 /**
@@ -109,14 +115,18 @@ async function createBoard(req: FastifyRequest, reply: FastifyReply): Promise<vo
  */
 
 async function updateBoard(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const { boardId } = <RequestParamsDefault>req.params;
-    const boardIndex = findBoardByIndex(boardId);
-    if (boardIndex === -1) {
-        reply.code(400).send('Board not found');
-    } else {
-        await updateBoardInData(boardIndex, req);
-        reply.send(boardsData[boardIndex]);
-    }
+  const { boardId } = <RequestParamsDefault>req.params;
+  const body = <IBoards>req.body;
+
+  await connection
+    .then(async (c) => {
+      await c.manager.update(BoardEntity, boardId, { title: body.title });
+      const board = await getRepository(BoardEntity).findOne(boardId, {relations: ["columns"]});
+      reply.send(board);
+    })
+    .catch(() => {
+      reply.code(404).send('Board not found');
+    })
 }
 
 /**
@@ -137,7 +147,7 @@ async function deleteBoard(req: FastifyRequest, reply: FastifyReply): Promise<vo
         reply.send('Board deleted');
       })
       .catch(() => {
-        reply.code(404).send('Board not found');
+        reply.code(400).send('Board not found');
       })
 }
 

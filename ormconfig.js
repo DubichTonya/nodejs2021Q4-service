@@ -1,4 +1,4 @@
-import * as dotenv from 'dotenv';
+const dotenv = require('dotenv')
 
 dotenv.config();
 
@@ -18,7 +18,7 @@ module.exports = {
     "src/migrations/**/*.ts"
   ],
   "cli": {
-    "entitiesDir": "src/entity",
+    "entitiesDir": "src/entities",
     "migrationsDir": "src/migrations"
   }
 

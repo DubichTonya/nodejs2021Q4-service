@@ -6,6 +6,8 @@
     "lib": ["es2018"],
     "noImplicitAny": true,
     "strict": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   }
 }

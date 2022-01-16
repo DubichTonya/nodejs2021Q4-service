@@ -1,24 +1,10 @@
 version: "3.9"
 
 services:
-  app:
-    build: .
-    image: dubich/app
-    environment:
-      - PORT=${PORT}
-    ports:
-      - ${PORT}:${PORT}
-    restart: always
-    depends_on:
-      - postgres
-    networks:
-      - net
-    volumes:
-      - logs:/app/logs:rw
-      - ./src:/app/src:rw
   postgres:
-    build: ./db
+    build: .
     image: dubich/postgres
+    container_name: db_container
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
@@ -26,16 +12,8 @@ services:
       POSTGRES_PORT: ${POSTGRES_PORT}
       PGDATA: ${PGDATA}
     volumes:
-      - db:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data:rw
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
-    restart: always
-    networks:
-      - net
-networks:
-  net:
-    name: custom_network
-    driver: bridge
 volumes:
   db:
-  logs:

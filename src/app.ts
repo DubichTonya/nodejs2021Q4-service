@@ -6,6 +6,7 @@ import { taskRoutes } from './resources/tasks/task.router';
 import { HOST, PORT } from './common/config';
 import { Logger } from './logger';
 import { createErrorMessage, createPromiseErrorMessage, createResponseMessage } from './common/helper';
+import { authRoutes } from './resources/auth/auth.router';
 
 const customLogger = new Logger();
 
@@ -32,6 +33,7 @@ Fastify.register(fastifySwagger, {
 Fastify.register(userRoutes);
 Fastify.register(boardRoutes);
 Fastify.register(taskRoutes);
+Fastify.register(authRoutes);
 
 Fastify.addHook('onResponse', (req, reply, next) => {
     const firstNumberOfStatusCode = `${reply.statusCode}`[0];

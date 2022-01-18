@@ -1,8 +1,8 @@
 import { getRepository } from 'typeorm';
 import { FastifyReply, FastifyRequest } from 'fastify';
+import { hashSync } from 'bcrypt';
 import { UserEntity } from '../../entities/User';
 import { connection } from '../../db';
-import { hashSync } from 'bcrypt';
 
 interface RequestParamsDefault {
   userId: string;

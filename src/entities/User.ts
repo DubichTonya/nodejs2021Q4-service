@@ -6,7 +6,7 @@ export class UserEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
   
-  @Column()
+  @Column({nullable: true})
   name: string;
 
   @Column()

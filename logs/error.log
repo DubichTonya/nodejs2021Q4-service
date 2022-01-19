@@ -1,0 +1,520 @@
+
+  id: e31a69fe-dc24-4f71-9645-29736e7db6bf
+  url: /users/123, query parameters: {"userId":"123"}, body: null, status code: 400
+  
+  id: e158815c-73d9-4315-bf8e-aacd65812668
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 404
+  
+  id: 9adeab0b-534b-45d8-9859-d3e702de92bd
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 404
+  
+  id: 900a950c-55d1-4861-a895-0968cd009bb0
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 401
+  
+  id: f367b2c8-6e27-4dbc-b4ee-083d91f03b4e
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 401
+  
+  id: 2d05dc2c-8b40-4a24-8686-abcabf5719d9
+  url: /users/12345, query parameters: {"userId":"12345"}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 400
+  
+  id: 16de1086-66ff-4787-b790-835133680b28
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 404
+  
+  id: ae41e754-233d-4836-8fa5-ba709aef49c6
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: 00a77b04-e19c-46cf-9781-339547040e0a
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 404
+  
+  id: 6f822224-f35c-4f0c-9fbd-3d209f04604a
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 404
+  
+  id: 5b0d19ce-9bbd-40a8-95d6-9234986698a7
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 00277948-5a86-40f8-8d9f-a5924a567585
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 775fbf0e-705f-4209-9919-e60ca702d149
+  url: /boards/504ab0ac-ff11-44f8-942c-b7fa18d083c8, query parameters: {"boardId":"504ab0ac-ff11-44f8-942c-b7fa18d083c8"}, body: null, status code: 404
+  
+  id: e1ed6236-ea0f-4c6b-8e26-5f411a6ffd6d
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 520d9f07-5a5f-489f-9faf-26ec22eed17c
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 74cff0af-62ea-495f-ae04-c7c370b22a31
+  url: /boards/33c66f70-d241-4ae1-8546-5b7616195178/tasks/9f15260b-34c9-4341-99da-75dde938e2dd, query parameters: {"boardId":"33c66f70-d241-4ae1-8546-5b7616195178","taskId":"9f15260b-34c9-4341-99da-75dde938e2dd"}, body: null, status code: 404
+  
+  id: e28d53ed-6db9-4965-9992-52a16b96bf35
+  url: /boards/b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec/tasks/7d17e88e-b7e3-433c-a8d8-c34c28b1f675, query parameters: {"boardId":"b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec","taskId":"7d17e88e-b7e3-433c-a8d8-c34c28b1f675"}, body: null, status code: 404
+  
+  id: 2c26feba-1d1f-4b80-8de6-51e5dce79c2e
+  url: /boards/b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec/tasks/37b0e0bc-9a2b-4dae-a43b-a3efcd5c27c1, query parameters: {"boardId":"b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec","taskId":"37b0e0bc-9a2b-4dae-a43b-a3efcd5c27c1"}, body: null, status code: 404
+  
+  id: 6ab6cb02-e611-43b7-b88a-0c893653bfa2
+  url: /boards/b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec/tasks/9878726d-4054-40e9-8d50-e3658d214537, query parameters: {"boardId":"b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec","taskId":"9878726d-4054-40e9-8d50-e3658d214537"}, body: null, status code: 404
+  
+  id: b09a989e-92fa-403f-9535-c12e5482ab15
+  url: /boards/b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec/tasks/f62fe674-be44-4e02-b918-c5d147bb921c, query parameters: {"boardId":"b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec","taskId":"f62fe674-be44-4e02-b918-c5d147bb921c"}, body: null, status code: 404
+  
+  id: 810f416e-fb3b-4529-98f0-3fd2f14fb36b
+  url: /boards/b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec/tasks/e911845e-f961-4268-b485-58cd60a5ce53, query parameters: {"boardId":"b5eb2c61-cf2c-4bb8-92e7-8d86d4b43eec","taskId":"e911845e-f961-4268-b485-58cd60a5ce53"}, body: null, status code: 404
+  
+  id: a38d63e9-4e1e-494f-a410-91b0845eb9c3
+  url: /favicon.ico, query parameters: {"*":"favicon.ico"}, body: null, status code: 404
+  
+  id: 17bc6d5a-ebc5-4d05-a713-f30b7f5c8535
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 404
+  
+  id: a0cc78ee-7d52-4898-be44-749d050ecbbe
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 404
+  
+  id: 38ccc8d0-24d6-4425-a9d3-14a4f1d17be1
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 401
+  
+  id: 504b50a0-5545-4ccd-8db7-d5e3f8c9b099
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 404
+  
+  id: 32c5ec3b-f5af-4e72-a1e4-4236eb5c9ef3
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 404
+  
+  id: d4fc30eb-7d89-4762-a3dd-7eb37a82fb96
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 401
+  
+  id: d3a7f6af-e6b1-4818-bbb0-cb78ef6d9da0
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 404
+  
+  id: 85c2bd91-677d-4833-b083-dae02f6c33d5
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 0d8b53f8-65b3-4d31-b9d2-00cb11aef35b
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 784d1e0d-7e36-4216-bf50-f2782a35be36
+  url: /users/123, query parameters: {"userId":"123"}, body: null, status code: 400
+  
+  id: c8ba2b4c-4a15-49f8-b578-0f7d83b0656a
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 9a9e2ff3-8b32-4af8-9298-e10782967262
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: affb1929-920e-4d3b-8278-67e50203734a
+  url: /boards/985b1b39-fdec-4c30-af64-5a347969fd60, query parameters: {"boardId":"985b1b39-fdec-4c30-af64-5a347969fd60"}, body: null, status code: 404
+  
+  id: 8d56d01e-30a0-4ae4-9d65-c66bd089645d
+  url: /users/12345, query parameters: {"userId":"12345"}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 400
+  
+  id: 74c838a6-90f8-4e3e-9930-ddd15be1af8c
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: 68f94523-b021-4f05-a7c4-608467bbe82d
+  url: /boards/253ae944-ee4e-4095-a509-ecf16bc3c5a2/tasks/5e11c51a-8be2-4f67-a1ce-7392d7132d48, query parameters: {"boardId":"253ae944-ee4e-4095-a509-ecf16bc3c5a2","taskId":"5e11c51a-8be2-4f67-a1ce-7392d7132d48"}, body: null, status code: 404
+  
+  id: 7381df5d-2178-408d-a7b8-dec2a2b6ff74
+  url: /boards/253ae944-ee4e-4095-a509-ecf16bc3c5a2/tasks/6749d71f-bd5b-40a3-b196-9935cb3c5153, query parameters: {"boardId":"253ae944-ee4e-4095-a509-ecf16bc3c5a2","taskId":"6749d71f-bd5b-40a3-b196-9935cb3c5153"}, body: null, status code: 404
+  
+  id: 94f6f011-69af-4227-8c90-e18cca42736b
+  url: /boards/253ae944-ee4e-4095-a509-ecf16bc3c5a2/tasks/8aacf83b-16b7-47d0-8558-cfb0ad1b78e0, query parameters: {"boardId":"253ae944-ee4e-4095-a509-ecf16bc3c5a2","taskId":"8aacf83b-16b7-47d0-8558-cfb0ad1b78e0"}, body: null, status code: 404
+  
+  id: fdc6c4e9-5834-40aa-9d1c-0e67cd96db0a
+  url: /boards/253ae944-ee4e-4095-a509-ecf16bc3c5a2/tasks/4f7c0434-0279-4110-93b5-a100ddfedbf1, query parameters: {"boardId":"253ae944-ee4e-4095-a509-ecf16bc3c5a2","taskId":"4f7c0434-0279-4110-93b5-a100ddfedbf1"}, body: null, status code: 404
+  
+  id: 1709a3ea-e63e-485f-954d-c9cd5bbaa2cf
+  url: /boards/253ae944-ee4e-4095-a509-ecf16bc3c5a2/tasks/7bdb6787-975a-4bb9-b36e-91095947dd6a, query parameters: {"boardId":"253ae944-ee4e-4095-a509-ecf16bc3c5a2","taskId":"7bdb6787-975a-4bb9-b36e-91095947dd6a"}, body: null, status code: 404
+  
+  id: cfbabdea-eb49-4c4d-80fc-a7446cc76fdb
+  url: /boards/62d2a641-65e4-4abf-9fd3-d909a61e5d39/tasks/d74e53dc-6a6c-4f6c-8835-708e3423191b, query parameters: {"boardId":"62d2a641-65e4-4abf-9fd3-d909a61e5d39","taskId":"d74e53dc-6a6c-4f6c-8835-708e3423191b"}, body: null, status code: 404
+  
+  id: 04955a84-2615-441f-96f3-fe5a4fb46c8e
+  url: /, query parameters: {}, body: null, status code: 404
+  
+  id: baf32650-7921-4cb3-a924-1c30c5adbbb4
+  url: /, query parameters: {}, body: null, status code: 404
+  
+  id: b2d87a27-20a3-48be-9f4a-25f5ba6ccb3d
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 5d11defa-ce48-4efd-be16-40ce0bd96e5d
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 53cacca0-9e9f-4be0-86dc-72e8779b26c4
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: f7073f59-c3de-4058-83cd-5fd6bf884976
+  url: /users, query parameters: {}, body: null, status code: 500
+  
+  id: a7c55535-4c2e-4098-be51-9c8edb1e726d
+  url: /users, query parameters: {}, body: null, status code: 500
+  
+  id: e5e3c30d-9f88-4ec3-bd09-11cf536a1ab5
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 88d0a164-25a3-4449-8530-12787eb22fca
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 3d0de099-3980-4587-8f92-d7ace8bb06b4
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: d342aba5-c756-4ea9-afd6-8101d12455f0
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 45659d6d-2699-48cc-bb7d-b5ed90fdfbb5
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 34b5e86d-22f2-47d3-ae4a-003855372a35
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: ad0676ef-ece4-4bf3-b594-1a9ebea48636
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: 7709c52e-1c47-44ab-a5ab-e76d9c64c4ad
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: b67c2a0a-50ea-4af6-bb87-a9fcfaa4fa31
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 59a2a85d-4b6c-46dc-9956-0c9787565295
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 019a7d90-ece0-4a4e-819b-b7fa0252af63
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 7ed7e496-2f10-4f10-9e64-59a36de625b2
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: e3f21c48-96d5-48e1-8f39-37d45d54fd3e
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: f53e60b2-afdc-4065-a117-dbd6f6f47e13
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: a8f61c2e-2674-4ebd-a742-3ded9ebf9d9a
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: 46d3e495-b368-4016-8765-1c1169cc8332
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: 64d55405-88b1-42a5-a511-679a2ee0f31a
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 4a37151d-c401-48e2-a061-64dc21caedab
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 29c97beb-d831-4bbf-8519-0be6ebab92f1
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 77e7e7bb-3c96-4984-9802-c6aa7c3ad3b3
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: effc72c9-041d-401c-8512-eb8a866aeb49
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 0b3eecda-0ba3-415e-807f-8d8779080fd7
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: fc139595-2b63-459d-936f-487806ab3b9e
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 4cc77cf9-95b7-49c5-b96f-4433b80bb5f8
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 16cc99c7-72ce-4e13-a53c-c9b6b31910aa
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: cfb0cedc-78d8-4cde-b2c2-c776d5a91ffd
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: e341bc3e-4f86-43a5-bf29-6c484b4d60fe
+  url: /users/123, query parameters: {"userId":"123"}, body: null, status code: 401
+  
+  id: 4dac145c-579f-4cb4-a349-a206f315116f
+  url: /users/123, query parameters: {"userId":"123"}, body: null, status code: 401
+  
+  id: 75c71ac3-1f80-48c3-9899-4e9248997e89
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: eb693747-9187-4fbc-a7be-47f43bffabc0
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: caedf397-7454-4bef-a510-af2e78e8b8d5
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: 9c05834a-5fa5-4dab-972b-c21d848751ee
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: 0dfa10e4-698b-4a36-8579-72b6fcb7794e
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: d7297e2e-872d-47f3-941f-28879c3a8d32
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: 31a753d8-a5ae-48ea-b11c-d336a70d3fd3
+  url: /boards/dcd7bffb-d848-4bb6-9552-8b80256f40d4, query parameters: {"boardId":"dcd7bffb-d848-4bb6-9552-8b80256f40d4"}, body: null, status code: 404
+  
+  id: 4bf47400-e2b7-43ab-a746-57ff3570aae1
+  url: /boards/aba317c0-5657-490c-b6ce-833565742cd1/tasks/f65003f0-fb63-408b-bfec-21b76b7c7bec, query parameters: {"boardId":"aba317c0-5657-490c-b6ce-833565742cd1","taskId":"f65003f0-fb63-408b-bfec-21b76b7c7bec"}, body: null, status code: 404
+  
+  id: 94bc3bc6-83a0-4d73-9dee-138a3798c8ac
+  url: /boards/aba317c0-5657-490c-b6ce-833565742cd1/tasks/c708030e-8ff8-4145-86fd-100f7571df96, query parameters: {"boardId":"aba317c0-5657-490c-b6ce-833565742cd1","taskId":"c708030e-8ff8-4145-86fd-100f7571df96"}, body: null, status code: 404
+  
+  id: 0fb978eb-76ab-4f46-99f0-a1219e524e44
+  url: /boards/aba317c0-5657-490c-b6ce-833565742cd1/tasks/5210154c-42ea-48a7-821b-9b02b7579bcb, query parameters: {"boardId":"aba317c0-5657-490c-b6ce-833565742cd1","taskId":"5210154c-42ea-48a7-821b-9b02b7579bcb"}, body: null, status code: 404
+  
+  id: b2779e7c-4320-499b-a5a8-4e6f751eda53
+  url: /boards/aba317c0-5657-490c-b6ce-833565742cd1/tasks/19af0d99-32c6-47ae-a26f-f21099e6b045, query parameters: {"boardId":"aba317c0-5657-490c-b6ce-833565742cd1","taskId":"19af0d99-32c6-47ae-a26f-f21099e6b045"}, body: null, status code: 404
+  
+  id: ccf7ca4e-7104-4280-a508-0e8ab3ffbaae
+  url: /boards/aba317c0-5657-490c-b6ce-833565742cd1/tasks/714f70b6-9747-4866-b36f-9238c00761ea, query parameters: {"boardId":"aba317c0-5657-490c-b6ce-833565742cd1","taskId":"714f70b6-9747-4866-b36f-9238c00761ea"}, body: null, status code: 404
+  
+  id: d0169755-a01d-4dbf-91e4-4f62f507d042
+  url: /boards/d9238065-a2f4-4318-adb0-287d02038730/tasks/5370af75-7f6d-494e-b94b-4210610771d0, query parameters: {"boardId":"d9238065-a2f4-4318-adb0-287d02038730","taskId":"5370af75-7f6d-494e-b94b-4210610771d0"}, body: null, status code: 404
+  
+  id: 03d08d6e-c1b5-4a7a-871d-1a93a8d4f598
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 7be81706-1430-40ce-acad-24d238cb4c38
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 2df21ea2-87c5-4993-91de-25bd1d478589
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 849d4d42-812d-40ce-bebe-0f0bbbf4910d
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 47105a21-1437-4f76-a55b-a97c33c6d195
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: e14b726e-f70a-4fa3-8515-badc005fc306
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 79588c9a-1bc1-4be7-a785-3a999e88c8c8
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 1c10020a-4441-49d8-a5ee-593f95e867e7
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 85502b59-2921-439a-a9f9-d7eb49867f54
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: f3f29314-c29f-474a-98a0-2dcb577cb3d6
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: efa90d81-aea8-487c-ae62-83a824b58582
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: 39c5bc57-31b2-43be-87d9-c71ea21a5037
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: 9586c5a1-aae3-49c1-b000-f217da150d34
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 11c66a6b-f918-458f-aa50-c434b9f6ee1e
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 08b2f36a-0bf8-4d31-8ba3-2ea2a11914fc
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: 0afbc66a-ceba-41ab-a6ae-619e2636b940
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: 4a4e0875-92e4-45d9-ba70-f7166e14e86b
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 5258895c-eb9e-43cf-8dc7-9a840b0f8621
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 6e2a98a3-8e1e-4c72-93ff-9eb491d443df
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 274c7eb1-a00f-4ecb-a721-68104de8aebc
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: be348ab7-a8f3-4efc-b8c0-b4d947e47dcd
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: e9c5f952-64ba-4f74-897a-64cdf56e6b83
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 3328b476-ddae-4e9f-a41d-9cc30075e1f7
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 4620a786-cb39-4613-aac2-c54331419ef5
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: c56f3d49-df33-44aa-a1e1-d662da4bdfff
+  url: /boards/ec776543-70b3-44cd-a48b-8c28fbd07cce, query parameters: {"boardId":"ec776543-70b3-44cd-a48b-8c28fbd07cce"}, body: null, status code: 404
+  
+  id: ce99d46a-3ef2-4def-b960-abb7411a3046
+  url: /boards/eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a/tasks/83bad7d8-0d2e-4b15-a5df-7e60b4b896c2, query parameters: {"boardId":"eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a","taskId":"83bad7d8-0d2e-4b15-a5df-7e60b4b896c2"}, body: null, status code: 404
+  
+  id: 929fec1f-3273-4823-9a05-37b25ff60c20
+  url: /boards/eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a/tasks/821afe13-1474-4f87-8539-11e855674ea3, query parameters: {"boardId":"eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a","taskId":"821afe13-1474-4f87-8539-11e855674ea3"}, body: null, status code: 404
+  
+  id: 60e51b78-2fcc-4817-8983-7b0e3b3ca41a
+  url: /boards/eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a/tasks/37c1cedc-fb44-47f7-aacc-bb0195ada4a0, query parameters: {"boardId":"eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a","taskId":"37c1cedc-fb44-47f7-aacc-bb0195ada4a0"}, body: null, status code: 404
+  
+  id: c56b4619-772f-484f-8951-ac351055d124
+  url: /boards/eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a/tasks/c15c8c67-6733-4ec2-a935-f84caf2ebe83, query parameters: {"boardId":"eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a","taskId":"c15c8c67-6733-4ec2-a935-f84caf2ebe83"}, body: null, status code: 404
+  
+  id: 1bd55dc4-3d80-4901-8426-046728123f0f
+  url: /boards/eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a/tasks/d7a540f3-bd02-4aa7-a210-a82a05c1896c, query parameters: {"boardId":"eb28e9d5-41fe-4c4c-a1d7-21c1de578c0a","taskId":"d7a540f3-bd02-4aa7-a210-a82a05c1896c"}, body: null, status code: 404
+  
+  id: 8c934f8e-40fd-4b7a-bc3a-6c61ea8330f3
+  url: /boards/38014c82-a5aa-4f3a-ad96-498f0a2fef40/tasks/75652141-67c2-426a-8048-917c2605bf56, query parameters: {"boardId":"38014c82-a5aa-4f3a-ad96-498f0a2fef40","taskId":"75652141-67c2-426a-8048-917c2605bf56"}, body: null, status code: 404
+  
+  id: ea750d70-86fc-4439-bc42-5b8deb007392
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 0f140683-3f66-47a1-8bed-bc9c918b36aa
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 8aeaaedb-f02d-4ddc-8232-8baf95f8377c
+  url: /users/123, query parameters: {"userId":"123"}, body: null, status code: 401
+  
+  id: e9f4078f-3f0e-4455-8ec9-67393e80ef06
+  url: /users/123, query parameters: {"userId":"123"}, body: null, status code: 401
+  
+  id: 62980497-084a-44e3-a2d5-630fbc54a62d
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: eeda38f6-8399-438a-aa9a-781d5cfb4924
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 6a87059a-58ce-46e9-8d69-92802ada8602
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: 7001c7c7-4033-403d-b1e2-7ad937896804
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: a84f3487-1710-4728-9af5-07105572e90b
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: d911a6ab-bee1-4b42-8098-8c5a15d1490a
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: 421e7b33-2013-485d-ac66-c0312afe6b8b
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 3bca3de3-5b76-4db5-a595-3dfea8e07f5b
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: a82736db-fc72-49d3-86dd-12493b599e44
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: ad23c78a-d79c-4639-a758-62e583d517f0
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 175b2e80-0333-45a4-a3b4-7c875df053ec
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 6e371ab9-3085-4e47-a200-16828eecf179
+  url: /boards/12345/tasks, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 91735762-f95d-4d08-8c82-c23ad568aca7
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: d1cb38ae-0347-40bd-98af-fed366f82aff
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 13514902-e4ed-404a-a45f-c3ebfea4165b
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 3062f56d-95c6-47d7-9f48-8953eefa4fee
+  url: /boards/12345/tasks/12345, query parameters: {"boardId":"12345","taskId":"12345"}, body: null, status code: 401
+  
+  id: 7a609aa5-415a-4e0e-b16c-e93694de31c3
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 485cdcf0-6301-463f-9879-e68e2329c8d4
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 0d343dba-868d-414a-9e78-47abbc0cf493
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: 5decf385-7750-49d3-ba51-02b120695d42
+  url: /boards/7a49aee6-0700-4bfe-b7f6-bdf8b5526918, query parameters: {"boardId":"7a49aee6-0700-4bfe-b7f6-bdf8b5526918"}, body: null, status code: 404
+  
+  id: 7c6d79b9-4882-4255-bd80-d2c59eaa86c7
+  'Unhandled Rejection at: {}, reason: QueryFailedError: insert or update on table "column_entity" violates foreign key constraint "FK_5155495cc40a64f56666ccebf04", 
+  
+  id: e507c2e8-fefd-48d2-b3d4-cd07fdbaabac
+  url: /boards/c024fa1d-89df-4643-8a8d-67fbab584f8f/tasks/8403989e-4e32-4a64-9313-df33aa2ac896, query parameters: {"boardId":"c024fa1d-89df-4643-8a8d-67fbab584f8f","taskId":"8403989e-4e32-4a64-9313-df33aa2ac896"}, body: null, status code: 404
+  
+  id: 7a4f64f8-6306-4887-a799-25fb1cbd3386
+  url: /boards/c024fa1d-89df-4643-8a8d-67fbab584f8f/tasks/8cab4ee9-5849-4a5d-9fba-6f27dae16c10, query parameters: {"boardId":"c024fa1d-89df-4643-8a8d-67fbab584f8f","taskId":"8cab4ee9-5849-4a5d-9fba-6f27dae16c10"}, body: null, status code: 404
+  
+  id: 6d8b333c-a890-4522-9488-508e2e756148
+  url: /boards/c024fa1d-89df-4643-8a8d-67fbab584f8f/tasks/cf03ce20-21ab-4ae6-b855-60c6e0212097, query parameters: {"boardId":"c024fa1d-89df-4643-8a8d-67fbab584f8f","taskId":"cf03ce20-21ab-4ae6-b855-60c6e0212097"}, body: null, status code: 404
+  
+  id: 58f27524-656e-4be4-9c01-d8a94d83e362
+  url: /boards/c024fa1d-89df-4643-8a8d-67fbab584f8f/tasks/23b3c636-9d6f-48af-a2bf-46d8b01ff183, query parameters: {"boardId":"c024fa1d-89df-4643-8a8d-67fbab584f8f","taskId":"23b3c636-9d6f-48af-a2bf-46d8b01ff183"}, body: null, status code: 404
+  
+  id: e00d18c5-d364-4dab-a651-7513e87f1fb9
+  url: /boards/c024fa1d-89df-4643-8a8d-67fbab584f8f/tasks/9a2a16b6-140f-4daa-adb6-fbeacd36b1a6, query parameters: {"boardId":"c024fa1d-89df-4643-8a8d-67fbab584f8f","taskId":"9a2a16b6-140f-4daa-adb6-fbeacd36b1a6"}, body: null, status code: 404
+  
+  id: 72588165-c625-4f8f-9caa-6ecf3e674c41
+  url: /boards/86a854a2-2339-4e32-a8b4-37061e853e15/tasks/ad46aa7d-519d-4ebc-b007-50b21971bc46, query parameters: {"boardId":"86a854a2-2339-4e32-a8b4-37061e853e15","taskId":"ad46aa7d-519d-4ebc-b007-50b21971bc46"}, body: null, status code: 404
+  
+  id: 7f4a38c0-f65f-4e69-8ed9-d99e883c0a01
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: c3e1975c-5a4d-4c06-bdcf-f3335cf8c060
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: a21ded8e-9c22-47d1-a242-71538aa74b33
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: efb9070f-d22c-4cfa-964e-b80afc93ff16
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: f2e4a115-2580-4df9-902e-0c365e6e42d2
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: 76c47cc5-d062-4819-8d96-c6369d1553d3
+  url: /boards, query parameters: {}, body: null, status code: 401
+  
+  id: ee0468e7-cc02-463d-9c0a-fd39f8171f99
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: d27d5721-00d2-4d5f-a7f7-05764ba6496f
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 04fb185a-b26f-42e0-a40d-dc6e54cb5692
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 5363bfa1-5c7e-42ce-8d2b-b17ad164527e
+  url: /boards/12345, query parameters: {"boardId":"12345"}, body: null, status code: 401
+  
+  id: 6987db05-83f8-4aa9-b7da-8edf6fa3396d
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 97077762-e0fc-4b81-9190-a313a8a0cac9
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 590e4c98-6964-449a-95ed-19f0cb094a60
+  url: /users/123, query parameters: {"userId":"123"}, body: null, status code: 401
+  
+  id: 4ab314e6-34d2-44e9-b7c8-650c96ae2d21
+  url: /users/123, query parameters: {"userId":"123"}, body: null, status code: 401
+  
+  id: cd01bc18-3a18-4c73-baf7-751e88706f39
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: 9226b23f-94f2-4ea4-89f8-a9ec7ddabff2
+  url: /users, query parameters: {}, body: null, status code: 401
+  
+  id: d1e17ca2-338b-4209-955d-d662c4b6deb7
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: 78c97d3a-8a0a-4a76-ae76-4c2e412f78b7
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: c83b2ab3-6f6e-4825-899d-ceb5255ddde9
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  
+  id: 6a95f0c2-4a7f-4149-a326-fa44864f22c9
+  url: /users/12345, query parameters: {"userId":"12345"}, body: null, status code: 401
+  

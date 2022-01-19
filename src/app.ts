@@ -7,6 +7,7 @@ import { HOST, PORT } from './common/config';
 import { Logger } from './logger';
 import { createErrorMessage, createPromiseErrorMessage, createResponseMessage } from './common/helper';
 import { authRoutes } from './resources/auth/auth.router';
+import { checkToken } from './checkToken';
 
 const customLogger = new Logger();
 
@@ -34,6 +35,11 @@ Fastify.register(userRoutes);
 Fastify.register(boardRoutes);
 Fastify.register(taskRoutes);
 Fastify.register(authRoutes);
+
+Fastify.addHook('onRequest', (req, reply, done) => {
+    checkToken(req, reply);
+    done()
+})
 
 Fastify.addHook('onResponse', (req, reply, next) => {
     const firstNumberOfStatusCode = `${reply.statusCode}`[0];

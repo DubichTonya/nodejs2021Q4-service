@@ -971,3 +971,555 @@
   id: 34521c7c-f7bb-47b5-9c68-06f19dbe3653
   url: /boards/86a854a2-2339-4e32-a8b4-37061e853e15, query parameters: {"boardId":"86a854a2-2339-4e32-a8b4-37061e853e15"}, body: null, status code: 200
   
+  id: 534e8399-0f9e-4012-904b-ce58d9ca6aa9
+  url: /login, query parameters: {}, body: {"login":"admin","password":"admin"}, status code: 200
+  
+  id: 9345b493-25a4-49ac-9814-3b6f70dd2b23
+  url: /login, query parameters: {}, body: {"login":"admin","password":"admin"}, status code: 200
+  
+  id: 6c4c51f8-c250-431a-8ae4-297c3a5b0106
+  url: /users, query parameters: {}, body: null, status code: 200
+  
+  id: d2ef8145-7dad-45a7-a1d0-6bff49981e22
+  url: /login, query parameters: {}, body: {"login":"admin","password":"admin"}, status code: 200
+  
+  id: cd2901ff-2cc0-4321-acec-033ba321554e
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 67fb6e83-6cdd-4c8f-b788-177068394af6
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: 7e377f77-20e8-4419-a299-b03b2197df41
+  url: /users/c3624ce5-1e0e-49b8-952c-4171b675b6d0, query parameters: {"userId":"c3624ce5-1e0e-49b8-952c-4171b675b6d0"}, body: null, status code: 200
+  
+  id: 357b3de4-e174-4769-bd97-4f009c7847ea
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 87e6c3e8-b5c5-4999-8e67-2a4f62840b1b
+  url: /users/c3624ce5-1e0e-49b8-952c-4171b675b6d0, query parameters: {"userId":"c3624ce5-1e0e-49b8-952c-4171b675b6d0"}, body: null, status code: 200
+  
+  id: ae101173-5589-4afe-b37f-1c659536e9be
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 2511473b-e9f6-4068-8026-990bf88e4ec5
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 201
+  
+  id: 2c69f97b-08af-4bfb-947c-731ba7bf6955
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: e4512fe4-1693-42ce-8e9c-d86f94ae79a1
+  url: /boards/307af829-ffa1-466d-aa87-64e9db3002ac, query parameters: {"boardId":"307af829-ffa1-466d-aa87-64e9db3002ac"}, body: null, status code: 200
+  
+  id: 0d9016d7-ade2-4b4e-9094-e90af7fc893c
+  url: /users/a6844e34-65e5-41df-98e2-6ab7dd2c5ede, query parameters: {"userId":"a6844e34-65e5-41df-98e2-6ab7dd2c5ede"}, body: null, status code: 200
+  
+  id: 10bd060f-28f0-4d1d-8f23-1da80d25d6fb
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036"}, body: null, status code: 200
+  
+  id: 77be3573-ff19-42bd-b526-19a38580de3c
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036"}, body: null, status code: 200
+  
+  id: b12d96d7-72f7-40d7-8097-1ce14938160b
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: f5406b5a-3678-4b50-b458-4991dd62745f
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: e3548813-df41-49bd-99af-bb5c950e3e93
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks/9fe09b5b-3aa3-4858-a1c6-93a02445d207, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036","taskId":"9fe09b5b-3aa3-4858-a1c6-93a02445d207"}, body: null, status code: 200
+  
+  id: e886ce14-edc3-4f9a-8fe0-c2400e38ecce
+  url: /boards/a6c1b731-e625-41c1-acd8-d046fcf7fba2, query parameters: {"boardId":"a6c1b731-e625-41c1-acd8-d046fcf7fba2"}, body: {"id":"a6c1b731-e625-41c1-acd8-d046fcf7fba2","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 200
+  
+  id: c549d462-556b-41fc-982b-9aae2d6501ef
+  url: /users/cd819f80-481f-4a48-b598-0a3cc3991ba7, query parameters: {"userId":"cd819f80-481f-4a48-b598-0a3cc3991ba7"}, body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"cd819f80-481f-4a48-b598-0a3cc3991ba7"}, status code: 200
+  
+  id: a6c1a89b-f610-4447-999d-9240c8751ed9
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 201
+  
+  id: fa3788b2-3c6c-4c97-bb72-287e2633c1b6
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: ab9fd681-de93-40a0-9ba9-46d28209aee7
+  url: /users/cd819f80-481f-4a48-b598-0a3cc3991ba7, query parameters: {"userId":"cd819f80-481f-4a48-b598-0a3cc3991ba7"}, body: null, status code: 200
+  
+  id: 687f2b05-d21f-4b76-a93e-7a2bb0cbcc75
+  url: /boards/9cbd1755-69b9-4d41-b352-3525bcca54f2, query parameters: {"boardId":"9cbd1755-69b9-4d41-b352-3525bcca54f2"}, body: null, status code: 200
+  
+  id: 79d7c707-f618-4eee-a210-61ded37006ff
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks/fafc6bac-d325-4f9b-91db-56b1ee8fbe7e, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036","taskId":"fafc6bac-d325-4f9b-91db-56b1ee8fbe7e"}, body: null, status code: 200
+  
+  id: f343a6a9-4d31-4cb5-b21a-b50691dcb407
+  url: /users/cd819f80-481f-4a48-b598-0a3cc3991ba7, query parameters: {"userId":"cd819f80-481f-4a48-b598-0a3cc3991ba7"}, body: null, status code: 200
+  
+  id: f9ce1d11-f4d6-408c-ac7a-066754faa00b
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 4dce201b-3e8b-44d3-98e1-3adbeded5e10
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 201
+  
+  id: f4e619d9-d839-4d8f-9ec8-db7a4e11958a
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: c09388b7-19db-468d-be3c-4ccafee0914d
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959"}, body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","userId":null,"columnId":null}, status code: 201
+  
+  id: 77cea0c5-e6f8-436d-8e39-e5d48dd54ff9
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959"}, body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","userId":null,"columnId":null}, status code: 201
+  
+  id: 66032804-de25-41db-b24b-8f6f85e410bb
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959"}, body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","userId":null,"columnId":null}, status code: 201
+  
+  id: fc13dabf-0665-44c3-a431-2616312a101a
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks/37df18df-1bee-4e6c-9331-ed9e917e31ba, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036","taskId":"37df18df-1bee-4e6c-9331-ed9e917e31ba"}, body: {"id":"37df18df-1bee-4e6c-9331-ed9e917e31ba","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036","columnId":null}, status code: 200
+  
+  id: 1d6b15cb-c78e-4df9-bcbe-f399decec451
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks/37df18df-1bee-4e6c-9331-ed9e917e31ba, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036","taskId":"37df18df-1bee-4e6c-9331-ed9e917e31ba"}, body: null, status code: 200
+  
+  id: 9cdcf2d8-dfd0-4fb9-8781-c49be2cfb254
+  url: /users/ba1734dd-7fb5-478d-8eb0-31170efe399a, query parameters: {"userId":"ba1734dd-7fb5-478d-8eb0-31170efe399a"}, body: null, status code: 200
+  
+  id: 5c5e962f-5e29-48eb-971b-907351d67045
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks/9fe09b5b-3aa3-4858-a1c6-93a02445d207, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036","taskId":"9fe09b5b-3aa3-4858-a1c6-93a02445d207"}, body: null, status code: 200
+  
+  id: 98e0792a-666a-4fcc-83ac-c1b56aaa336d
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959"}, body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","userId":null,"columnId":null}, status code: 201
+  
+  id: 0f06911f-0577-42e4-9856-a8d1135acfcd
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959"}, body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","userId":null,"columnId":null}, status code: 201
+  
+  id: 5f1b0fc3-e8ba-430e-aca8-516b4fc4491e
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: daa4a968-3cfd-48d6-be2d-4156912a1240
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036/tasks/9fe09b5b-3aa3-4858-a1c6-93a02445d207, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036","taskId":"9fe09b5b-3aa3-4858-a1c6-93a02445d207"}, body: null, status code: 200
+  
+  id: c450e896-7fa8-4f1c-81f0-0a28b6b721a1
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks/cc2a7586-45ac-41ae-8b83-5f9d0be82597, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","taskId":"cc2a7586-45ac-41ae-8b83-5f9d0be82597"}, body: null, status code: 200
+  
+  id: 6d6f7104-fb37-41ba-813c-fb0f54090eb0
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks/09208509-581b-4eeb-88bc-0a7db5c547cf, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","taskId":"09208509-581b-4eeb-88bc-0a7db5c547cf"}, body: null, status code: 200
+  
+  id: d54d6e37-489f-482b-8757-849a4bb8f1b0
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks/e55db795-8cb9-4a0e-9ad1-940da0cbce5c, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","taskId":"e55db795-8cb9-4a0e-9ad1-940da0cbce5c"}, body: null, status code: 200
+  
+  id: 614be599-21cb-4fc3-94e2-b2df7d44553b
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks/58836ace-0f73-4ce6-bc2e-f5cdc6ac3d0e, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","taskId":"58836ace-0f73-4ce6-bc2e-f5cdc6ac3d0e"}, body: null, status code: 200
+  
+  id: 86c71ac6-ec7d-4dd4-b8de-5a4514431389
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959/tasks/5996277d-37e5-409c-b863-ab2bff720f60, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959","taskId":"5996277d-37e5-409c-b863-ab2bff720f60"}, body: null, status code: 200
+  
+  id: f574e351-51d0-4eac-a942-5f435febf616
+  url: /boards/33b2091b-925d-4232-8bcf-31670c9a7959, query parameters: {"boardId":"33b2091b-925d-4232-8bcf-31670c9a7959"}, body: null, status code: 200
+  
+  id: 08903e6f-5279-45f7-bbd5-224bdfb86524
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: b969c26c-4f87-4eae-b5e0-cf9bdba1307e
+  url: /boards/000b1ad4-08fd-457a-a012-71eb9e6d7036, query parameters: {"boardId":"000b1ad4-08fd-457a-a012-71eb9e6d7036"}, body: null, status code: 200
+  
+  id: 51cad36b-f498-47d5-a7cd-3026737bd2df
+  url: /boards/a2cd310c-71f7-4955-8c76-021230e13b5c, query parameters: {"boardId":"a2cd310c-71f7-4955-8c76-021230e13b5c"}, body: null, status code: 200
+  
+  id: 5a26ace0-b3b1-42d3-ac75-33cc66510ef9
+  url: /boards/742dca4c-0052-4113-810a-e11e371770c0/tasks, query parameters: {"boardId":"742dca4c-0052-4113-810a-e11e371770c0"}, body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"defb75b3-fc79-4df5-b128-0f5f63dd3160","boardId":"742dca4c-0052-4113-810a-e11e371770c0"}, status code: 201
+  
+  id: 88794d60-b347-4d75-af12-54bcc6f41879
+  url: /boards/742dca4c-0052-4113-810a-e11e371770c0/tasks, query parameters: {"boardId":"742dca4c-0052-4113-810a-e11e371770c0"}, body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"defb75b3-fc79-4df5-b128-0f5f63dd3160","boardId":"742dca4c-0052-4113-810a-e11e371770c0"}, status code: 201
+  
+  id: a3921850-b1d3-4212-8b42-8b058dc11098
+  url: /users/defb75b3-fc79-4df5-b128-0f5f63dd3160, query parameters: {"userId":"defb75b3-fc79-4df5-b128-0f5f63dd3160"}, body: null, status code: 200
+  
+  id: d7ee99cf-e962-4c95-9be7-e09cf9a020c9
+  url: /boards/742dca4c-0052-4113-810a-e11e371770c0/tasks/622755d4-865d-481d-85c2-9b5b8f2cea99, query parameters: {"boardId":"742dca4c-0052-4113-810a-e11e371770c0","taskId":"622755d4-865d-481d-85c2-9b5b8f2cea99"}, body: null, status code: 200
+  
+  id: 1ef284a8-53d8-4b4b-bb17-3a1183ab9242
+  url: /boards/742dca4c-0052-4113-810a-e11e371770c0/tasks/2068a0d7-4373-4682-8e5c-b7860a7f264b, query parameters: {"boardId":"742dca4c-0052-4113-810a-e11e371770c0","taskId":"2068a0d7-4373-4682-8e5c-b7860a7f264b"}, body: null, status code: 200
+  
+  id: 61aea3b3-577e-47f7-80dc-c72472b39802
+  url: /boards/742dca4c-0052-4113-810a-e11e371770c0/tasks/622755d4-865d-481d-85c2-9b5b8f2cea99, query parameters: {"boardId":"742dca4c-0052-4113-810a-e11e371770c0","taskId":"622755d4-865d-481d-85c2-9b5b8f2cea99"}, body: null, status code: 200
+  
+  id: c364063b-1aae-4896-9b8c-b61db4c0112d
+  url: /boards/742dca4c-0052-4113-810a-e11e371770c0/tasks/2068a0d7-4373-4682-8e5c-b7860a7f264b, query parameters: {"boardId":"742dca4c-0052-4113-810a-e11e371770c0","taskId":"2068a0d7-4373-4682-8e5c-b7860a7f264b"}, body: null, status code: 200
+  
+  id: 5350541c-9374-4661-a3af-2efed47bd8eb
+  url: /boards/742dca4c-0052-4113-810a-e11e371770c0, query parameters: {"boardId":"742dca4c-0052-4113-810a-e11e371770c0"}, body: null, status code: 200
+  
+  id: 22f21ad1-0966-40bb-aa3e-bd02d1a3ea52
+  url: /login, query parameters: {}, body: {"login":"admin","password":"admin"}, status code: 200
+  
+  id: 8836997c-3b62-4fda-8574-edffbc70b5eb
+  url: /users, query parameters: {}, body: null, status code: 200
+  
+  id: bc9a3f6a-97cc-4637-944c-6d0e30675a1e
+  url: /login, query parameters: {}, body: {"login":"admin","password":"admin"}, status code: 200
+  
+  id: 8a6b6256-f10a-4a18-9808-8fa82a8a6424
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: 89a4f7fe-a934-4b98-ad47-d88291d8c9d5
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 3a6c2cfe-9fcf-454b-bee9-6d79e0a7619e
+  url: /users/673c5cae-aeaa-4073-b326-e3625acf9472, query parameters: {"userId":"673c5cae-aeaa-4073-b326-e3625acf9472"}, body: null, status code: 200
+  
+  id: b336925d-c39c-40b1-af75-ec5b04eacdeb
+  url: /users/673c5cae-aeaa-4073-b326-e3625acf9472, query parameters: {"userId":"673c5cae-aeaa-4073-b326-e3625acf9472"}, body: null, status code: 200
+  
+  id: 0923ec6e-f886-4f6e-a07c-27f9fb7659da
+  url: /boards, query parameters: {}, body: null, status code: 200
+  
+  id: 7359ec3a-c98b-4ca5-87f4-b8fba1aecee3
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: cfa3cf5a-5832-4768-854a-7b8173a370fc
+  url: /boards, query parameters: {}, body: null, status code: 200
+  
+  id: 650e7626-3e87-41fb-b981-b7abf8a2b3b6
+  url: /boards/3e913b20-3a90-4b55-9e62-a68ecb726380, query parameters: {"boardId":"3e913b20-3a90-4b55-9e62-a68ecb726380"}, body: null, status code: 200
+  
+  id: 9b3a56fb-2330-411f-8f4e-1ee9de934c1c
+  url: /users/8fc19cee-7d4b-4e6d-b908-8d18fc8d1510, query parameters: {"userId":"8fc19cee-7d4b-4e6d-b908-8d18fc8d1510"}, body: null, status code: 200
+  
+  id: d2669bd9-c50e-409d-a16f-ebfedbeee269
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 5fbee198-9d47-4bee-99ba-a8a9685d563c
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: 953f8f59-78cc-4a2b-af2b-ab8565158698
+  url: /boards/fa88962b-d0ce-4d80-8bc5-5a0a9e651604, query parameters: {"boardId":"fa88962b-d0ce-4d80-8bc5-5a0a9e651604"}, body: null, status code: 200
+  
+  id: 0cc2aca0-f2ed-4055-94a7-375c15472e5d
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 159b5979-ec62-4731-a463-e3eb1b0ffe10
+  url: /users/d60939ca-2546-46da-8d34-752d4f9ddc39, query parameters: {"userId":"d60939ca-2546-46da-8d34-752d4f9ddc39"}, body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"d60939ca-2546-46da-8d34-752d4f9ddc39"}, status code: 200
+  
+  id: 7407b8b8-9a3c-492a-8f5b-97acfce95cd8
+  url: /users/d60939ca-2546-46da-8d34-752d4f9ddc39, query parameters: {"userId":"d60939ca-2546-46da-8d34-752d4f9ddc39"}, body: null, status code: 200
+  
+  id: ada58e4e-8355-402f-bf10-c25f7f05d4e4
+  url: /boards/0acc08d0-048f-4092-99d0-8b779438fc3e, query parameters: {"boardId":"0acc08d0-048f-4092-99d0-8b779438fc3e"}, body: {"id":"0acc08d0-048f-4092-99d0-8b779438fc3e","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 200
+  
+  id: b93c8327-3173-48fc-805b-2bc86d8c58d5
+  url: /boards/0acc08d0-048f-4092-99d0-8b779438fc3e, query parameters: {"boardId":"0acc08d0-048f-4092-99d0-8b779438fc3e"}, body: null, status code: 200
+  
+  id: 9e274c92-645b-41c5-ab98-9ddd573a8fbf
+  url: /users/d60939ca-2546-46da-8d34-752d4f9ddc39, query parameters: {"userId":"d60939ca-2546-46da-8d34-752d4f9ddc39"}, body: null, status code: 200
+  
+  id: 489e1961-718e-4fbc-9ba7-6394b632d104
+  url: /boards/0acc08d0-048f-4092-99d0-8b779438fc3e, query parameters: {"boardId":"0acc08d0-048f-4092-99d0-8b779438fc3e"}, body: null, status code: 200
+  
+  id: 49ae4189-172f-45ef-b407-070254f58135
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: 18954c81-4b07-4b88-9620-3268d74f1f62
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: f310fb70-9b8f-4278-8991-415171f675fb
+  url: /users/abf2b456-f750-4f32-9209-2b1acd706620, query parameters: {"userId":"abf2b456-f750-4f32-9209-2b1acd706620"}, body: null, status code: 200
+  
+  id: e74bcff9-6578-4801-8bec-f4937a4779b5
+  url: /boards/075a4837-44db-4233-8b04-396ea601649b, query parameters: {"boardId":"075a4837-44db-4233-8b04-396ea601649b"}, body: null, status code: 200
+  
+  id: 4c1e81e4-6169-49af-9839-0256c1b10108
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: 37c8c8fa-bfcb-442f-9675-9efc1702998d
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: b18a9854-9556-48f5-a874-c08f1f739bb1
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 3a57654e-0674-497a-9196-49f07247f77a
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8"}, body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","userId":null,"columnId":null}, status code: 201
+  
+  id: 6b6059c5-dcda-497e-8288-cd355ee7f6bf
+  url: /boards/c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4/tasks, query parameters: {"boardId":"c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4"}, body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"9accc6d9-090f-4dfb-a12b-4c64737e5a19","boardId":"c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4"}, status code: 201
+  
+  id: 5113dc9b-458b-4607-bd37-cc7ccf4998ca
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8"}, body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","userId":null,"columnId":null}, status code: 201
+  
+  id: 66cf3d63-db88-4b31-98de-b623e39ddc67
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8"}, body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","userId":null,"columnId":null}, status code: 201
+  
+  id: 97d5c072-e61b-4389-b9a0-4490fa78298d
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8"}, body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","userId":null,"columnId":null}, status code: 201
+  
+  id: 3555f0f1-bbc6-4d4f-8ec2-7c8976f9a546
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8"}, body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","userId":null,"columnId":null}, status code: 201
+  
+  id: c24293d1-262e-424b-baf3-7b635221cec2
+  url: /login, query parameters: {}, body: {"login":"admin","password":"admin"}, status code: 200
+  
+  id: 195cf0be-501f-4ce2-9b0c-666a6d2419e5
+  url: /boards/c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4/tasks, query parameters: {"boardId":"c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4"}, body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"9accc6d9-090f-4dfb-a12b-4c64737e5a19","boardId":"c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4"}, status code: 201
+  
+  id: d40c205f-234d-4a24-af6c-9dd62b07e291
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks/af5a3fae-122f-4771-ae47-2cc74638bd46, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","taskId":"af5a3fae-122f-4771-ae47-2cc74638bd46"}, body: null, status code: 200
+  
+  id: 3b34ff08-927a-4bd5-8041-45af7305d3d2
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks/42a902f3-30b4-4b71-872d-bba45e1e9c18, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","taskId":"42a902f3-30b4-4b71-872d-bba45e1e9c18"}, body: null, status code: 200
+  
+  id: 574ef1b0-0758-4e0f-8800-7ca5adb2cd36
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks/92462960-2d5c-47d6-a893-bbae18dca989, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","taskId":"92462960-2d5c-47d6-a893-bbae18dca989"}, body: null, status code: 200
+  
+  id: d91650e1-dbe4-4d07-b946-86c4f9d5f8d3
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks/1fb8d082-e8cc-4544-87dd-0a8a45ee2efd, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","taskId":"1fb8d082-e8cc-4544-87dd-0a8a45ee2efd"}, body: null, status code: 200
+  
+  id: bec734ec-aa4d-4af9-b798-994a7a28622e
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8/tasks/9ef37a07-592d-4d7a-9687-a866bc97319e, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8","taskId":"9ef37a07-592d-4d7a-9687-a866bc97319e"}, body: null, status code: 200
+  
+  id: 939f694b-151b-4ae0-a979-ae0c46ddfc93
+  url: /users/9accc6d9-090f-4dfb-a12b-4c64737e5a19, query parameters: {"userId":"9accc6d9-090f-4dfb-a12b-4c64737e5a19"}, body: null, status code: 200
+  
+  id: f1ac1f24-2c35-4312-8b36-e772d8d2aea4
+  url: /boards/530950cb-9733-4034-b1fb-bd224191c3d8, query parameters: {"boardId":"530950cb-9733-4034-b1fb-bd224191c3d8"}, body: null, status code: 200
+  
+  id: 756a2160-9ce3-44ea-8f6e-072d69dcd1d8
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: dad60cb2-59a4-4a9a-b707-0bebcd756d17
+  url: /boards/c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4/tasks/f198223f-b5b9-4c1d-a59e-8f49bc8c4568, query parameters: {"boardId":"c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4","taskId":"f198223f-b5b9-4c1d-a59e-8f49bc8c4568"}, body: null, status code: 200
+  
+  id: b91b6270-9eb5-48d6-9fde-299d45accdc9
+  url: /boards/c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4/tasks/06717cf1-9d62-48dd-81f3-654c1c7e3572, query parameters: {"boardId":"c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4","taskId":"06717cf1-9d62-48dd-81f3-654c1c7e3572"}, body: null, status code: 200
+  
+  id: 7f774a4e-d775-4cfa-9b95-ae69039c3fc3
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 201
+  
+  id: 2d584e74-b61b-4443-937c-84e4083f8f7d
+  url: /boards/3e913b20-3a90-4b55-9e62-a68ecb726380, query parameters: {"boardId":"3e913b20-3a90-4b55-9e62-a68ecb726380"}, body: null, status code: 200
+  
+  id: ef6109ad-8fd5-4a5d-9562-963afeafe844
+  url: /boards/c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4/tasks/06717cf1-9d62-48dd-81f3-654c1c7e3572, query parameters: {"boardId":"c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4","taskId":"06717cf1-9d62-48dd-81f3-654c1c7e3572"}, body: null, status code: 200
+  
+  id: a9667e6a-bdec-4091-aca0-ea0352a0926b
+  url: /boards/c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4/tasks/f198223f-b5b9-4c1d-a59e-8f49bc8c4568, query parameters: {"boardId":"c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4","taskId":"f198223f-b5b9-4c1d-a59e-8f49bc8c4568"}, body: null, status code: 200
+  
+  id: 500e7c61-aa52-40e2-b04c-735324302823
+  url: /boards/c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4, query parameters: {"boardId":"c8089cad-ba8f-4cdd-8fe2-a5d7c68658d4"}, body: null, status code: 200
+  
+  id: 069d00e4-b1d4-4718-9005-24d9809b4ac3
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5"}, body: null, status code: 200
+  
+  id: 813ff74b-50b9-4b1e-b990-5e59727f6134
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5"}, body: null, status code: 200
+  
+  id: a06ecdf0-adce-4229-a71a-96d698f65c1a
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks/e4747404-2ab5-46d8-ac6c-a7c217a442d7, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5","taskId":"e4747404-2ab5-46d8-ac6c-a7c217a442d7"}, body: null, status code: 200
+  
+  id: 2b2d4e81-010f-46e1-a484-253a13b544a3
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 201
+  
+  id: 927cacf2-2826-4822-94a5-958f1907765c
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks/31fd82d0-ad08-40ea-931e-ebd4d4cef710, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5","taskId":"31fd82d0-ad08-40ea-931e-ebd4d4cef710"}, body: null, status code: 200
+  
+  id: d921d32e-5c1c-48b6-96b0-f638500978f1
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 201
+  
+  id: 9225a064-0c83-4083-a550-01ad1486c7da
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks/1b5a8008-4831-48d5-ad0a-1e5c5c3f47f8, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5","taskId":"1b5a8008-4831-48d5-ad0a-1e5c5c3f47f8"}, body: {"id":"1b5a8008-4831-48d5-ad0a-1e5c5c3f47f8","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5","columnId":null}, status code: 200
+  
+  id: cb30950b-bf56-434a-9f85-a91a5efc7ab1
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks/1b5a8008-4831-48d5-ad0a-1e5c5c3f47f8, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5","taskId":"1b5a8008-4831-48d5-ad0a-1e5c5c3f47f8"}, body: null, status code: 200
+  
+  id: 94530664-9758-4053-b224-8e4ccf9d919a
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks/e4747404-2ab5-46d8-ac6c-a7c217a442d7, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5","taskId":"e4747404-2ab5-46d8-ac6c-a7c217a442d7"}, body: null, status code: 200
+  
+  id: b09c6834-3d01-427c-bb2c-bc9ffdcddf1c
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5/tasks/e4747404-2ab5-46d8-ac6c-a7c217a442d7, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5","taskId":"e4747404-2ab5-46d8-ac6c-a7c217a442d7"}, body: null, status code: 200
+  
+  id: 8c379a16-0ad2-4fbb-b35d-056a2352f976
+  url: /boards/e4576bf3-64d6-482c-a684-47eb43d607e5, query parameters: {"boardId":"e4576bf3-64d6-482c-a684-47eb43d607e5"}, body: null, status code: 200
+  
+  id: ca1c17be-64fb-48a4-8072-12356318b4ca
+  url: /login, query parameters: {}, body: {"login":"admin","password":"admin"}, status code: 200
+  
+  id: f188f176-a7f7-4fcf-92d4-6344529b904b
+  url: /login, query parameters: {}, body: {"login":"admin","password":"admin"}, status code: 200
+  
+  id: 1b85f636-cffa-4f21-ace5-8d367a35875a
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: a0b3c5c0-1b34-4eaa-be81-33e3af465f5e
+  url: /boards, query parameters: {}, body: null, status code: 200
+  
+  id: b23479ae-9866-4b0b-b5ea-2bb3bd4f2b1b
+  url: /users, query parameters: {}, body: null, status code: 200
+  
+  id: 1279ff9b-22af-46bb-a73d-ece5c9483bfb
+  url: /boards, query parameters: {}, body: null, status code: 200
+  
+  id: 9cfc9194-e4c0-462a-a5da-e00a222dfd9b
+  url: /boards/72469454-5359-4be2-8904-8eb1f54e0f64, query parameters: {"boardId":"72469454-5359-4be2-8904-8eb1f54e0f64"}, body: null, status code: 200
+  
+  id: cc46bf9a-32c0-41f8-b3d8-d16a2828a8a3
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: 607fa155-0211-4ce4-abfc-ced3e65299b4
+  url: /users/a941be99-2117-46a9-be2e-4e80bfd3a65d, query parameters: {"userId":"a941be99-2117-46a9-be2e-4e80bfd3a65d"}, body: null, status code: 200
+  
+  id: 2c4b0cc5-750d-4ccf-98f7-f0d47102c961
+  url: /users/a941be99-2117-46a9-be2e-4e80bfd3a65d, query parameters: {"userId":"a941be99-2117-46a9-be2e-4e80bfd3a65d"}, body: null, status code: 200
+  
+  id: 8f8cd71d-94cb-411c-be4e-ff4f51719fb6
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 88ccf0c8-fed1-4fd4-b989-09749402b123
+  url: /boards/f91f1685-8408-4947-a641-bf4f55251d66, query parameters: {"boardId":"f91f1685-8408-4947-a641-bf4f55251d66"}, body: null, status code: 200
+  
+  id: 1957dbbe-85ba-4d90-bc1c-a358016453b1
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: d9fdf5a9-38d6-4ae6-82db-4d959772ce21
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 09463493-767c-4fe3-84a2-f21d9b7e4605
+  url: /users/6508f2dc-439a-4ca3-9886-b3f5afcde821, query parameters: {"userId":"6508f2dc-439a-4ca3-9886-b3f5afcde821"}, body: null, status code: 200
+  
+  id: 07bb2fb9-658e-47e0-8a22-8a06fcdb618c
+  url: /boards/51607624-cabf-49b0-bcd9-3c9490ab10cc, query parameters: {"boardId":"51607624-cabf-49b0-bcd9-3c9490ab10cc"}, body: {"id":"51607624-cabf-49b0-bcd9-3c9490ab10cc","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 200
+  
+  id: 072545c3-a403-4e18-ac29-124c1e0e9da3
+  url: /boards/51607624-cabf-49b0-bcd9-3c9490ab10cc, query parameters: {"boardId":"51607624-cabf-49b0-bcd9-3c9490ab10cc"}, body: null, status code: 200
+  
+  id: 599e8bc6-cf37-4f0a-aa50-3217361949ea
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: de52f399-5c30-47c5-89dd-042c647162e0
+  url: /boards/51607624-cabf-49b0-bcd9-3c9490ab10cc, query parameters: {"boardId":"51607624-cabf-49b0-bcd9-3c9490ab10cc"}, body: null, status code: 200
+  
+  id: 8beec5e4-7029-4744-ab9a-d48f91404127
+  url: /login, query parameters: {}, body: {"login":"admin","password":"admin"}, status code: 200
+  
+  id: 8fb9551a-0a6a-4e60-ba08-32953ed27e41
+  url: /users/d7ee5f3e-945b-4977-9146-14bc9ad06ea5, query parameters: {"userId":"d7ee5f3e-945b-4977-9146-14bc9ad06ea5"}, body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"d7ee5f3e-945b-4977-9146-14bc9ad06ea5"}, status code: 200
+  
+  id: 98b0b94b-9606-450a-bdad-0313fb721e22
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 450d9195-9bb4-4283-9487-4eb71126cd8d
+  url: /users/d7ee5f3e-945b-4977-9146-14bc9ad06ea5, query parameters: {"userId":"d7ee5f3e-945b-4977-9146-14bc9ad06ea5"}, body: null, status code: 200
+  
+  id: fafd7357-3fd5-4144-963f-ee2ec321d30b
+  url: /boards/fc4bfed6-587b-4663-9cc2-f941c4bc7974, query parameters: {"boardId":"fc4bfed6-587b-4663-9cc2-f941c4bc7974"}, body: null, status code: 200
+  
+  id: 8fcae66b-8fc6-4e62-a2ca-41d77701ec1a
+  url: /users/d7ee5f3e-945b-4977-9146-14bc9ad06ea5, query parameters: {"userId":"d7ee5f3e-945b-4977-9146-14bc9ad06ea5"}, body: null, status code: 200
+  
+  id: 913d1b42-1e55-4860-be58-a0466fa07bb6
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 3f7b64e3-3755-42d3-9453-8b32d8387db9
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: 21226579-47ca-466b-8974-935a51ac3eaf
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 09a60e32-0936-41c0-9a54-4344fe738904
+  url: /users/4d797329-6206-457d-9178-70a0905c093d, query parameters: {"userId":"4d797329-6206-457d-9178-70a0905c093d"}, body: null, status code: 200
+  
+  id: c2aadb05-a47b-4989-8eb2-705978889105
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 201
+  
+  id: fba1efe4-95e8-4f26-ba4c-bd951530a30a
+  url: /users, query parameters: {}, body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}, status code: 201
+  
+  id: f37f21b3-4b55-4141-93ba-3f52068181be
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c"}, body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","userId":null,"columnId":null}, status code: 201
+  
+  id: 4258ef58-9cfe-47b9-8545-fcd726bf6c84
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c"}, body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","userId":null,"columnId":null}, status code: 201
+  
+  id: d70d4132-914d-411d-af38-c8a00bf0a8e6
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71"}, body: null, status code: 200
+  
+  id: 86abaf57-1c82-4f84-8a4c-fa481c139ccd
+  url: /boards, query parameters: {}, body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}, status code: 201
+  
+  id: 1f03fc68-dbda-4134-a3d9-54707b3b89e1
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c"}, body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","userId":null,"columnId":null}, status code: 201
+  
+  id: 89ccdd3c-33d6-4a95-9ec6-2b02208514bd
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c"}, body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","userId":null,"columnId":null}, status code: 201
+  
+  id: c7f709c8-10d6-464f-9da5-66d6e5d083ef
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71"}, body: null, status code: 200
+  
+  id: 35d6df52-8139-40c9-92f5-35e459803b77
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c"}, body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","userId":null,"columnId":null}, status code: 201
+  
+  id: d573adc4-da13-4bcf-9631-b95483fbc649
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks/a3796446-66b6-4cdd-8d1c-0a65681d7f64, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71","taskId":"a3796446-66b6-4cdd-8d1c-0a65681d7f64"}, body: null, status code: 200
+  
+  id: 35a8b245-1d9f-46c4-8d76-3abf0ac15963
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks/b9244c71-66f3-4521-b3ba-8a55d12938c7, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","taskId":"b9244c71-66f3-4521-b3ba-8a55d12938c7"}, body: null, status code: 200
+  
+  id: 60a4d1b1-8646-45ed-bbde-491e055e815a
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks/616f8e24-a4ce-42cc-a996-e319a076e23a, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","taskId":"616f8e24-a4ce-42cc-a996-e319a076e23a"}, body: null, status code: 200
+  
+  id: ca8274ec-e333-4233-b232-fb113840edae
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks/8cfc82ae-a1b3-4df9-a7b8-77761b589c5e, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","taskId":"8cfc82ae-a1b3-4df9-a7b8-77761b589c5e"}, body: null, status code: 200
+  
+  id: d9cf4f31-5146-41fa-b5b6-7fd25598775d
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks/6a6b202a-f398-4c14-8bb2-e62269d48bc6, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","taskId":"6a6b202a-f398-4c14-8bb2-e62269d48bc6"}, body: null, status code: 200
+  
+  id: 5919407f-4b2b-4a37-ab67-19ea7a358f3b
+  url: /boards/cabb25b7-d79b-481b-b3b3-cd36aca4b08c/tasks, query parameters: {"boardId":"cabb25b7-d79b-481b-b3b3-cd36aca4b08c"}, body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"519ba289-82f8-4a1c-b3a1-60c1f2efca2b","boardId":"cabb25b7-d79b-481b-b3b3-cd36aca4b08c"}, status code: 201
+  
+  id: 8562e70c-4952-4c1d-a94c-f89acd40c20c
+  url: /boards/cabb25b7-d79b-481b-b3b3-cd36aca4b08c/tasks, query parameters: {"boardId":"cabb25b7-d79b-481b-b3b3-cd36aca4b08c"}, body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"519ba289-82f8-4a1c-b3a1-60c1f2efca2b","boardId":"cabb25b7-d79b-481b-b3b3-cd36aca4b08c"}, status code: 201
+  
+  id: 0296742d-639c-4cd1-88a5-8c7fc46b9f5c
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 201
+  
+  id: 79804c19-7e85-43f6-9519-22e619230dce
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c/tasks/8b01a1a9-38b6-4893-9792-9e1a65ace07a, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c","taskId":"8b01a1a9-38b6-4893-9792-9e1a65ace07a"}, body: null, status code: 200
+  
+  id: 4d626a7f-de42-4a08-88b6-9382f3bf9397
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks/9c40630c-9b54-4fc4-9320-3848666b76a8, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71","taskId":"9c40630c-9b54-4fc4-9320-3848666b76a8"}, body: null, status code: 200
+  
+  id: 25558f91-a439-486c-859f-896575798f5d
+  url: /users/519ba289-82f8-4a1c-b3a1-60c1f2efca2b, query parameters: {"userId":"519ba289-82f8-4a1c-b3a1-60c1f2efca2b"}, body: null, status code: 200
+  
+  id: 0038ea34-3b96-45f1-b885-e0859a4c6d4b
+  url: /boards/099a157f-3adf-4abd-9a9d-611138010d2c, query parameters: {"boardId":"099a157f-3adf-4abd-9a9d-611138010d2c"}, body: null, status code: 200
+  
+  id: 240013ee-9fe9-4c71-89bb-a25be9ea7949
+  url: /boards/cabb25b7-d79b-481b-b3b3-cd36aca4b08c/tasks/fc9a7318-0e4f-4196-acce-0b41aaf6be23, query parameters: {"boardId":"cabb25b7-d79b-481b-b3b3-cd36aca4b08c","taskId":"fc9a7318-0e4f-4196-acce-0b41aaf6be23"}, body: null, status code: 200
+  
+  id: a11ad17c-8057-4de0-82c5-5bc8532a5a50
+  url: /boards/cabb25b7-d79b-481b-b3b3-cd36aca4b08c/tasks/5ce7e1b3-fcff-4c5d-bcc2-854b008fcb1f, query parameters: {"boardId":"cabb25b7-d79b-481b-b3b3-cd36aca4b08c","taskId":"5ce7e1b3-fcff-4c5d-bcc2-854b008fcb1f"}, body: null, status code: 200
+  
+  id: 832510c9-fc1d-4394-9d37-581ea475f4f7
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71"}, body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null}, status code: 201
+  
+  id: 5c5ecc41-1658-4ae5-9000-d5db22aea284
+  url: /boards/72469454-5359-4be2-8904-8eb1f54e0f64, query parameters: {"boardId":"72469454-5359-4be2-8904-8eb1f54e0f64"}, body: null, status code: 200
+  
+  id: 7bc2941c-7bed-4c38-816e-f4316b7519b1
+  url: /boards/cabb25b7-d79b-481b-b3b3-cd36aca4b08c/tasks/fc9a7318-0e4f-4196-acce-0b41aaf6be23, query parameters: {"boardId":"cabb25b7-d79b-481b-b3b3-cd36aca4b08c","taskId":"fc9a7318-0e4f-4196-acce-0b41aaf6be23"}, body: null, status code: 200
+  
+  id: 8aa100a0-45cf-4992-bc72-4699a05f3b76
+  url: /boards/cabb25b7-d79b-481b-b3b3-cd36aca4b08c/tasks/5ce7e1b3-fcff-4c5d-bcc2-854b008fcb1f, query parameters: {"boardId":"cabb25b7-d79b-481b-b3b3-cd36aca4b08c","taskId":"5ce7e1b3-fcff-4c5d-bcc2-854b008fcb1f"}, body: null, status code: 200
+  
+  id: de01d6f9-6800-4222-af7c-b3a89d84842c
+  url: /boards/cabb25b7-d79b-481b-b3b3-cd36aca4b08c, query parameters: {"boardId":"cabb25b7-d79b-481b-b3b3-cd36aca4b08c"}, body: null, status code: 200
+  
+  id: 6edd4090-ff29-4550-8b1b-f6c5d5672c74
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks/3c3a68ed-6de2-46b6-b159-5dfbe225827a, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71","taskId":"3c3a68ed-6de2-46b6-b159-5dfbe225827a"}, body: {"id":"3c3a68ed-6de2-46b6-b159-5dfbe225827a","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71","columnId":null}, status code: 200
+  
+  id: 5ed50393-aa0f-4a74-a62c-993dcb7da2f4
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks/3c3a68ed-6de2-46b6-b159-5dfbe225827a, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71","taskId":"3c3a68ed-6de2-46b6-b159-5dfbe225827a"}, body: null, status code: 200
+  
+  id: 47e6afd5-c2b7-47cf-95dc-8b9b113b5ade
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks/a3796446-66b6-4cdd-8d1c-0a65681d7f64, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71","taskId":"a3796446-66b6-4cdd-8d1c-0a65681d7f64"}, body: null, status code: 200
+  
+  id: 8b4a00c2-021c-4bf6-b074-35f0caa3885a
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71/tasks/a3796446-66b6-4cdd-8d1c-0a65681d7f64, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71","taskId":"a3796446-66b6-4cdd-8d1c-0a65681d7f64"}, body: null, status code: 200
+  
+  id: 0b244c92-8c31-4cfd-8364-fbb14cf2576f
+  url: /boards/081c6949-e920-429f-8bbf-91b9bb7f7d71, query parameters: {"boardId":"081c6949-e920-429f-8bbf-91b9bb7f7d71"}, body: null, status code: 200
+  

@@ -1,11 +1,11 @@
-import { Connection, getRepository } from 'typeorm';
+import { getRepository } from 'typeorm';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { connection } from '../../db';
 import { BoardEntity } from '../../entities/Board';
-import { ColumnEntity } from '../../entities/Column';
+// import { ColumnEntity } from '../../entities/Column';
 
 
-interface IColumn {
+export interface IColumn {
     title: string,
     order: number
 }
@@ -13,7 +13,7 @@ interface IColumn {
 interface IBoards {
     id?: string;
     title: string;
-    columns: ColumnEntity[];
+    columns: IColumn[];
 }
 
 interface RequestParamsDefault {
@@ -30,7 +30,7 @@ interface RequestParamsDefault {
 async function getAllBoards(req: FastifyRequest, reply: FastifyReply): Promise<void> {
     await connection
       .then(async () => {
-          const boards = await getRepository(BoardEntity).find({relations: ["columns"]});
+          const boards = await getRepository(BoardEntity).find();
           reply.send(boards);
       })
       .catch((err) => {
@@ -52,7 +52,7 @@ async function getBoardById(req: FastifyRequest, reply: FastifyReply): Promise<v
     
     await connection
       .then(async () => {
-        const board = await getRepository(BoardEntity).findOne(boardId, {relations: ["columns"]});
+        const board = await getRepository(BoardEntity).findOne(boardId);
         
         if(board){
           reply.send(board);
@@ -75,14 +75,14 @@ async function getBoardById(req: FastifyRequest, reply: FastifyReply): Promise<v
  *     array, we send new board on client.
  */
 
-async function createColumn(item: IColumn, c: Connection, board: BoardEntity){
-    const column = await getRepository(ColumnEntity).create({
-        title: item.title,
-        order: item.order,
-        board
-    });
-    await c.manager.save(column);
-}
+// async function createColumn(item: IColumn, c: Connection, board: BoardEntity){
+//     const column = await getRepository(ColumnEntity).create({
+//         title: item.title,
+//         order: item.order,
+//         board
+//     });
+//     await c.manager.save(column);
+// }
 
 async function createBoard(req: FastifyRequest, reply: FastifyReply): Promise<void> {
     const {title, columns} = <IBoards>req.body;
@@ -93,10 +93,6 @@ async function createBoard(req: FastifyRequest, reply: FastifyReply): Promise<vo
           board.title = title;
           board.columns = columns;
           await c.manager.save(board);
-
-          columns?.forEach((item) => {
-              createColumn(item, c, board)
-          })
 
           reply.code(201).send(board)
 
@@ -120,8 +116,8 @@ async function updateBoard(req: FastifyRequest, reply: FastifyReply): Promise<vo
 
   await connection
     .then(async (c) => {
-      await c.manager.update(BoardEntity, boardId, { title: body.title });
-      const board = await getRepository(BoardEntity).findOne(boardId, {relations: ["columns"]});
+      await c.manager.update(BoardEntity, boardId, { title: body.title, columns: body.columns });
+      const board = await getRepository(BoardEntity).findOne(boardId);
       reply.send(board);
     })
     .catch(() => {

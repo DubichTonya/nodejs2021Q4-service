@@ -1,5 +1,15 @@
 # RS School REST service
 
+## Work with DATABASE
+1. Install [Docker](https://docs.docker.com/engine/install/)
+2. Go to the root directory of the project
+3. Execute the commands sequentially in the terminal
+    * `docker-compose up -d`
+    * `npm run migration`
+    * `npm run connection`
+    * `npm run test`
+
+
 ## Prerequisites
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).

@@ -1,0 +1,9 @@
+.idea
+.git
+Dockerfile
+./db/Dockerfile
+node_modules
+.github
+.vscode
+doc
+.gitignore

@@ -1,25 +1,16 @@
-import * as uuid from 'uuid';
+import { getRepository } from 'typeorm';
 import { FastifyReply, FastifyRequest } from 'fastify';
-import {
-    getUserData,
-    addUser,
-    deleteUserFromData,
-    updateUserInData,
-    findUserById,
-    findUserByIndex
-} from './user.memory.repository';
-import { changeUserIdInTasks } from '../tasks/task.memory.repository';
-
-const usersData = getUserData();
+import { UserEntity } from '../../entities/User';
+import { connection } from '../../db';
 
 interface RequestParamsDefault {
-    userId: string;
+  userId: string;
 }
 
 interface RequestBodyDefault {
-    name: string;
-    login: string;
-    password: string;
+  name: string;
+  login: string;
+  password: string;
 }
 
 /**
@@ -30,7 +21,15 @@ interface RequestBodyDefault {
  */
 
 async function getAllUsers(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    reply.send(usersData);
+  await connection
+    .then(async () => {
+      const users = await getRepository(UserEntity).find();
+      reply.send(users);
+    })
+    .catch((err) => {
+      reply.code(500).send(err.message);
+    });
+
 }
 
 /**
@@ -42,14 +41,20 @@ async function getAllUsers(req: FastifyRequest, reply: FastifyReply): Promise<vo
  */
 
 async function getUserById(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const { userId } = <RequestParamsDefault>req.params;
-    const user = findUserById(userId);
+  const { userId } = <RequestParamsDefault>req.params;
 
-    if (!user) {
-        reply.code(400).send('User not found');
-    } else {
+  await connection
+    .then(async () => {
+      const user = await getRepository(UserEntity).findOne(userId);
+      if (!user) {
+        reply.code(400).send(`User not found`);
+      } else {
         reply.send(user);
-    }
+      }
+    })
+    .catch(() => {
+      reply.code(400).send('User not found');
+    });
 }
 
 /**
@@ -61,10 +66,22 @@ async function getUserById(req: FastifyRequest, reply: FastifyReply): Promise<vo
  */
 
 async function createUser(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const body = <RequestBodyDefault>req.body;
-    const user = { ...body, id: uuid.v4() };
-    addUser(user);
-    reply.code(201).send(user);
+  const { name, login, password } = <RequestBodyDefault>req.body;
+
+  await connection
+    .then(async () => {
+      const user = await getRepository(UserEntity).create({
+        name,
+        login,
+        password
+      });
+
+      await getRepository(UserEntity).save(user);
+      reply.code(201).send(user);
+    })
+    .catch((err) => {
+      reply.code(500).send(err.message);
+    });
 }
 
 /**
@@ -77,14 +94,22 @@ async function createUser(req: FastifyRequest, reply: FastifyReply): Promise<voi
 
 
 async function updateUser(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const { userId } = <RequestParamsDefault>req.params;
-    const userIndex = findUserByIndex(userId);
-    if (userIndex === -1) {
-        reply.code(400).send('User not found');
-    } else {
-        await updateUserInData(userIndex, req);
-        reply.send(usersData[userIndex]);
-    }
+  const { userId } = <RequestParamsDefault>req.params;
+  const body = <RequestBodyDefault>req.body;
+
+  await connection
+    .then(async () => {
+      const user = await getRepository(UserEntity).create({
+        id: userId,
+        ...body
+      });
+
+      await getRepository(UserEntity).save(user);
+      reply.send(user)
+    })
+    .catch(() => {
+      reply.code(400).send('User not found');
+    });
 }
 
 /**
@@ -97,17 +122,18 @@ async function updateUser(req: FastifyRequest, reply: FastifyReply): Promise<voi
  */
 
 async function deleteUser(req: FastifyRequest, reply: FastifyReply): Promise<void> {
-    const { userId } = <RequestParamsDefault>req.params;
-    const userIndex = findUserByIndex(userId);
-    if (userIndex === -1) {
-        reply.code(401).send('User not found');
-    } else {
-        deleteUserFromData(userIndex);
-        changeUserIdInTasks(userId);
-        reply.send('User deleted');
-    }
+  const { userId } = <RequestParamsDefault>req.params;
+
+  await connection
+    .then(async () => {
+      await getRepository(UserEntity).delete(userId);
+      reply.send('User deleted');
+    })
+    .catch(() => {
+      reply.code(401).send('User not found');
+    });
 }
 
 export {
-    getAllUsers, getUserById, createUser, updateUser, deleteUser
+  getAllUsers, getUserById, createUser, updateUser, deleteUser
 };

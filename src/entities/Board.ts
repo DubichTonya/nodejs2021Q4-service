@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { ColumnEntity } from './Column';
 import { TaskEntity } from './Task';
+import { IColumn } from '../resources/boards/board.service';
 
 @Entity()
 export class BoardEntity {
@@ -9,9 +9,9 @@ export class BoardEntity {
 
   @Column()
   title: string;
-
-  @OneToMany(() => ColumnEntity, columnEntity => columnEntity.board)
-  columns: ColumnEntity[];
+  
+  @Column("jsonb")
+  columns!: IColumn[];
 
   @OneToMany(() => TaskEntity, taskEntity => taskEntity.board)
   tasks: TaskEntity[];

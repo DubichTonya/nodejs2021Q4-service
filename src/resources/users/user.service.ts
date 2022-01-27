@@ -1,5 +1,6 @@
 import { getRepository } from 'typeorm';
 import { FastifyReply, FastifyRequest } from 'fastify';
+import { hashSync } from 'bcrypt';
 import { UserEntity } from '../../entities/User';
 import { connection } from '../../db';
 
@@ -67,13 +68,14 @@ async function getUserById(req: FastifyRequest, reply: FastifyReply): Promise<vo
 
 async function createUser(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   const { name, login, password } = <RequestBodyDefault>req.body;
+  const hashPassword = hashSync(password, 10);
 
   await connection
     .then(async () => {
       const user = await getRepository(UserEntity).create({
         name,
         login,
-        password
+        password: hashPassword
       });
 
       await getRepository(UserEntity).save(user);
@@ -96,16 +98,23 @@ async function createUser(req: FastifyRequest, reply: FastifyReply): Promise<voi
 async function updateUser(req: FastifyRequest, reply: FastifyReply): Promise<void> {
   const { userId } = <RequestParamsDefault>req.params;
   const body = <RequestBodyDefault>req.body;
-
+  const requestBody = body.password ?
+    {
+      id: userId,
+      ...body,
+      password: hashSync(body.password, 10)
+    } :
+    {
+      id: userId,
+      ...body,
+    };
+  
   await connection
     .then(async () => {
-      const user = await getRepository(UserEntity).create({
-        id: userId,
-        ...body
-      });
+      const user = getRepository(UserEntity).create(requestBody);
 
       await getRepository(UserEntity).save(user);
-      reply.send(user)
+      reply.send(user);
     })
     .catch(() => {
       reply.code(400).send('User not found');

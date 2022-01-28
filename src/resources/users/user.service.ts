@@ -75,7 +75,7 @@ async function createUser(req: FastifyRequest, reply: FastifyReply): Promise<voi
       const user = await getRepository(UserEntity).create({
         name,
         login,
-        password: hashPassword
+        password: hashSync(password, 10)
       });
 
       await getRepository(UserEntity).save(user);

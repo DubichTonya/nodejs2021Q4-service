@@ -3,6 +3,8 @@ import {
   Controller,
   Delete,
   Get,
+  HttpException,
+  HttpStatus,
   Param,
   Post,
   Put,
@@ -11,8 +13,7 @@ import { BoardsService } from './boards.service';
 
 @Controller('boards')
 export class BoardsController {
-  constructor(private boardsService: BoardsService) {
-  }
+  constructor(private boardsService: BoardsService) {}
 
   @Get()
   findAllBoards() {
@@ -21,7 +22,13 @@ export class BoardsController {
 
   @Get(':boardId')
   findOneBoard(@Param() params) {
-    return this.boardsService.getBoard(params.id);
+    return this.boardsService.getBoard(params.boardId).then((data) => {
+      if (data) {
+        return data;
+      } else {
+        throw new HttpException('Board not found', HttpStatus.NOT_FOUND);
+      }
+    });
   }
 
   @Post()
@@ -31,13 +38,12 @@ export class BoardsController {
 
   @Put(':boardId')
   updateBoard(@Param() params, @Body() body) {
-    return this.boardsService.putBoard(params.id, body);
+    return this.boardsService.putBoard(params.boardId, body);
   }
 
   @Delete(':boardId')
-  deleteBoard(@Param() params) {
-    this.boardsService.deleteBoard(params.id).then(() => {
-      return 'Deleted success';
-    });
+  async deleteBoard(@Param() params) {
+    await this.boardsService.deleteBoard(params.boardId);
+    return 'Deleted success';
   }
 }

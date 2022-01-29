@@ -34,7 +34,7 @@ export class BoardsService {
   }
 
   async deleteBoard(id) {
-    const Board = await this.boardRepository.find(id);
+    const Board = await this.boardRepository.findOne(id);
     return await this.boardRepository.remove(Board);
   }
 }

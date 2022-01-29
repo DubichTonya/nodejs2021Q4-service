@@ -3,6 +3,8 @@ import {
   Controller,
   Delete,
   Get,
+  HttpException,
+  HttpStatus,
   Param,
   Post,
   Put,
@@ -11,8 +13,7 @@ import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
-  constructor(private usersService: UsersService) {
-  }
+  constructor(private usersService: UsersService) {}
 
   @Get()
   findAllUsers() {
@@ -26,9 +27,13 @@ export class UsersController {
 
   @Get(':userId')
   findOneUser(@Param() params) {
-    return this.usersService.getUser(params.id).then((data) => {
-      delete data['password'];
-      return data;
+    return this.usersService.getUser(params.userId).then((data) => {
+      if (data) {
+        delete data['password'];
+        return data;
+      } else {
+        throw new HttpException('User not found', HttpStatus.NOT_FOUND);
+      }
     });
   }
 
@@ -49,9 +54,8 @@ export class UsersController {
   }
 
   @Delete(':userId')
-  deleteUser(@Param() params) {
-    this.usersService.deleteUser(params.id).then(() => {
-      return 'Deleted success';
-    });
+  async deleteUser(@Param() params) {
+    await this.usersService.deleteUser(params.userId);
+    return 'Deleted success';
   }
 }

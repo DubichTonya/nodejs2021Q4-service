@@ -42,7 +42,7 @@ export class UsersService {
   }
 
   async deleteUser(id) {
-    const user = await this.userRepository.find(id);
-    return await this.userRepository.remove(user);
+    const user = await this.userRepository.findOne(id);
+    await this.userRepository.remove(user);
   }
 }

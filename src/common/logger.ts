@@ -11,7 +11,6 @@ class Logger {
       console.error(msg);
       fs.appendFileSync('./logs/error.log', msg);
     }
-
   }
 
   warn(msg: string): void {
@@ -45,7 +44,6 @@ class Logger {
       fs.appendFileSync('./logs/info.log', msg);
     }
   }
-
 }
 
 export { Logger };

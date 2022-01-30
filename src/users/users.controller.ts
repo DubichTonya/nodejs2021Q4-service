@@ -8,8 +8,11 @@ import {
   Param,
   Post,
   Put,
+  UsePipes,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { userPostSchema } from '../schemes/users';
+import { CustomValidationPipe } from '../pipes/validation.pipe';
 
 @Controller('users')
 export class UsersController {
@@ -38,6 +41,7 @@ export class UsersController {
   }
 
   @Post()
+  @UsePipes(new CustomValidationPipe(userPostSchema))
   createUser(@Body() body) {
     return this.usersService.postUser(body).then((data) => {
       delete data['password'];

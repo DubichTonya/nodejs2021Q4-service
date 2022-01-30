@@ -7,16 +7,24 @@ import { BoardsModule } from './boards/boards.module';
 import { TasksModule } from './tasks/tasks.module';
 import { FileModule } from './file/file.module';
 import config from '../ormconfig';
+import { UserEntity } from "./entities/User";
+import { LoginModule } from './login/login.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(config),
+    TypeOrmModule.forFeature([UserEntity]),
     UsersModule,
     BoardsModule,
     TasksModule,
-    FileModule
+    FileModule,
+    LoginModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private appService: AppService) {
+    this.appService.addAdminProfile();
+  }
+}

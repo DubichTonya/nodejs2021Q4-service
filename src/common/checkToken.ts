@@ -17,4 +17,5 @@ export function checkToken(req): boolean {
       }
     }
   }
+  return true;
 }

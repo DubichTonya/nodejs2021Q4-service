@@ -7,11 +7,12 @@ import {
   HttpStatus,
   Param,
   Post,
-  Put, UsePipes
-} from "@nestjs/common";
+  Put,
+  UsePipes,
+} from '@nestjs/common';
 import { BoardsService } from './boards.service';
-import { CustomValidationPipe } from "../pipes/validation.pipe";
-import { boardPostSchema, boardPutSchema } from "../schemes/boards";
+import { CustomValidationPipe } from '../pipes/validation.pipe';
+import { boardPostSchema, boardPutSchema } from '../schemes/boards';
 
 @Controller('boards')
 export class BoardsController {

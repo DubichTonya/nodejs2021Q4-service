@@ -7,7 +7,7 @@ import { BoardsModule } from './boards/boards.module';
 import { TasksModule } from './tasks/tasks.module';
 import { FileModule } from './file/file.module';
 import config from '../ormconfig';
-import { UserEntity } from "./entities/User";
+import { UserEntity } from './entities/User';
 import { LoginModule } from './login/login.module';
 
 @Module({

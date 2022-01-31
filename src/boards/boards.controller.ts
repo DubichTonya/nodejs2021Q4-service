@@ -7,9 +7,11 @@ import {
   HttpStatus,
   Param,
   Post,
-  Put,
-} from '@nestjs/common';
+  Put, UsePipes
+} from "@nestjs/common";
 import { BoardsService } from './boards.service';
+import { CustomValidationPipe } from "../pipes/validation.pipe";
+import { boardPostSchema, boardPutSchema } from "../schemes/boards";
 
 @Controller('boards')
 export class BoardsController {
@@ -32,11 +34,13 @@ export class BoardsController {
   }
 
   @Post()
+  @UsePipes(new CustomValidationPipe(boardPostSchema))
   createBoard(@Body() body) {
     return this.boardsService.postBoard(body);
   }
 
   @Put(':boardId')
+  @UsePipes(new CustomValidationPipe(boardPutSchema))
   updateBoard(@Param() params, @Body() body) {
     return this.boardsService.putBoard(params.boardId, body);
   }

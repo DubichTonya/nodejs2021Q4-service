@@ -7,9 +7,11 @@ import {
   HttpStatus,
   Param,
   Post,
-  Put,
-} from '@nestjs/common';
+  Put, UsePipes
+} from "@nestjs/common";
 import { TasksService } from './tasks.service';
+import { CustomValidationPipe } from "../pipes/validation.pipe";
+import { taskPostSchema, taskPutSchema } from "../schemes/tasks";
 
 @Controller('boards/:boardId/tasks')
 export class TasksController {
@@ -44,6 +46,7 @@ export class TasksController {
   }
 
   @Post()
+  @UsePipes(new CustomValidationPipe(taskPostSchema))
   createTask(@Body() body, @Param() params) {
     return this.tasksService.postTask(body, params).then((data) => {
       delete data['board'];
@@ -53,6 +56,7 @@ export class TasksController {
   }
 
   @Put(':taskId')
+  @UsePipes(new CustomValidationPipe(taskPutSchema))
   updateTask(@Body() body, @Param() params) {
     return this.tasksService.putTask(body, params).then((data) => {
       delete data['board'];

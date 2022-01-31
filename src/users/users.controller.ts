@@ -11,7 +11,7 @@ import {
   UsePipes,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { userPostSchema } from '../schemes/users';
+import { userPostSchema, userPutSchema } from "../schemes/users";
 import { CustomValidationPipe } from '../pipes/validation.pipe';
 
 @Controller('users')
@@ -50,8 +50,9 @@ export class UsersController {
   }
 
   @Put(':userId')
+  @UsePipes(new CustomValidationPipe(userPutSchema))
   updateUser(@Param() params, @Body() body) {
-    return this.usersService.putUser(params.id, body).then((data) => {
+    return this.usersService.putUser(params.userId, body).then((data) => {
       delete data['password'];
       return data;
     });

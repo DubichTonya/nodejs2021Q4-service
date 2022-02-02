@@ -7,9 +7,9 @@ import {
   HttpStatus,
   Param,
   Post,
-  Put,
-  UsePipes,
-} from '@nestjs/common';
+  Put, Req, Res,
+  UsePipes
+} from "@nestjs/common";
 import { UsersService } from './users.service';
 import { userPostSchema, userPutSchema } from '../schemes/users';
 import { CustomValidationPipe } from '../pipes/validation.pipe';

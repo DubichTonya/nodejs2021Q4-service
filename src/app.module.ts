@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -9,6 +9,12 @@ import { FileModule } from './file/file.module';
 import config from '../ormconfig';
 import { UserEntity } from './entities/User';
 import { LoginModule } from './login/login.module';
+import { UsersController } from './users/users.controller';
+import { LoggerMiddleware } from './loggerMiddleware';
+import { BoardsController } from './boards/boards.controller';
+import { TasksController } from './tasks/tasks.controller';
+import { FileController } from './file/file.controller';
+import { LoginController } from './login/login.controller';
 
 @Module({
   imports: [
@@ -23,8 +29,20 @@ import { LoginModule } from './login/login.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {
+export class AppModule implements NestModule {
   constructor(private appService: AppService) {
     this.appService.addAdminProfile();
+  }
+
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(LoggerMiddleware)
+      .forRoutes(
+        UsersController,
+        BoardsController,
+        TasksController,
+        FileController,
+        LoginController,
+      );
   }
 }

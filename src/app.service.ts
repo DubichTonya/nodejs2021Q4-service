@@ -11,7 +11,7 @@ export class AppService {
   ) {}
 
   async addAdminProfile() {
-    const admin = this.userRepo.findOne({ where: { login: 'admin' } });
+    const admin = await this.userRepo.findOne({ where: { login: 'admin' } });
     if (!admin) {
       const admin = this.userRepo.create({
         login: 'admin',

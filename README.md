@@ -69,3 +69,11 @@ npm run lint
 Press <kbd>F5</kbd> to debug.
 
 For more information, visit: https://code.visualstudio.com/docs/editor/debugging
+
+### Fastify
+
+![Fastify](https://github.com/DubichTonya/nodejs2021Q4-service/blob/nest/fastify.jpg?raw=true)
+
+### Express
+
+![Express](https://github.com/DubichTonya/nodejs2021Q4-service/blob/nest/express.jpg?raw=true)

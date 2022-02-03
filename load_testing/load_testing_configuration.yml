@@ -1,0 +1,18 @@
+config:
+  target: "http://localhost:4000/login"
+  phases:
+    - duration: 30
+      arrivalRate: 1
+      maxVusers: 10
+  payload:
+    path: "users.csv"
+    fields:
+      - "username"
+      - "password"
+scenarios:
+    - flow:
+        - post:
+            url: "/"
+            json:
+              username: "{{ username }}"
+              password: "{{ password }}"

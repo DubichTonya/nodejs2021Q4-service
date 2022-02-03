@@ -1,15 +1,5 @@
 # RS School REST service
 
-## Work with DATABASE
-1. Install [Docker](https://docs.docker.com/engine/install/)
-2. Go to the root directory of the project
-3. Execute the commands sequentially in the terminal
-    * `docker-compose up -d`
-    * `npm run migration`
-    * `npm run connection`
-    * `npm run test`
-
-
 ## Prerequisites
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).
@@ -27,15 +17,14 @@ git clone {repository URL}
 npm install
 ```
 
-## Running application
-
-```
-npm start
-```
-
-After starting the app on port (4000 as default) you can open
-in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
-For more information about OpenAPI/Swagger please visit https://swagger.io/.
+##  Running application and work with DATABASE
+1. Install [Docker](https://docs.docker.com/engine/install/)
+2. Go to the root directory of the project
+3. Execute the commands sequentially in the terminal
+   * `docker-compose up -d`
+   * `npm run migration:generate`
+   * `npm run migration:run`
+   * `npm run start:dev`
 
 ## Testing
 

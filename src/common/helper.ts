@@ -1,34 +1,10 @@
-import { FastifyReply, FastifyRequest } from 'fastify';
 import * as uuid from 'uuid';
 
-export function createResponseMessage(
-  req,
-  reply,
-  statusCode,
-): string {
+export function createResponseMessage(req, reply, statusCode): string {
   return `
   id: ${uuid.v4()}
   url: ${req.url}, query parameters: ${JSON.stringify(
     req.params,
   )}, body: ${JSON.stringify(req.body)}, status code: ${statusCode}
-  `;
-}
-
-export function createErrorMessage(err: Error, origin?: string): string {
-  return `
-  id: ${uuid.v4()}
-  name: ${err.name}, message: ${err.message}, 
-  stack: ${err.stack},
-  Exception origin: ${origin || null}
-  `;
-}
-
-export function createPromiseErrorMessage(
-  reason: unknown,
-  promise: Promise<unknown>,
-): string {
-  return `
-  id: ${uuid.v4()}
-  'Unhandled Rejection at: ${JSON.stringify(promise)}, reason: ${reason}, 
   `;
 }

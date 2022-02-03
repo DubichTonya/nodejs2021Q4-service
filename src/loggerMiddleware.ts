@@ -1,11 +1,10 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-import { Logger } from "./common/logger";
-import { createResponseMessage } from "./common/helper";
+import { Logger } from './common/logger';
+import { createResponseMessage } from './common/helper';
 
 @Injectable()
 export class LoggerMiddleware extends Logger implements NestMiddleware {
-  
   use(req: Request, res: Response, next: NextFunction): void {
     res.on('finish', () => {
       const { statusCode } = res;

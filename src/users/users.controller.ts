@@ -3,13 +3,11 @@ import {
   Controller,
   Delete,
   Get,
-  HttpException,
-  HttpStatus,
   Param,
   Post,
-  Put, Req, Res,
-  UsePipes
-} from "@nestjs/common";
+  Put,
+  UsePipes,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { userPostSchema, userPutSchema } from '../schemes/users';
 import { CustomValidationPipe } from '../pipes/validation.pipe';

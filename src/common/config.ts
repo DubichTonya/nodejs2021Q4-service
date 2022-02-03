@@ -1,6 +1,5 @@
 import * as dotenv from 'dotenv';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
-import jwt from 'jsonwebtoken';
 
 dotenv.config();
 

@@ -5,8 +5,8 @@ import { TaskEntity } from './Task';
 export class UserEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-  
-  @Column({nullable: true})
+
+  @Column({ nullable: true })
   name: string;
 
   @Column()
@@ -15,6 +15,6 @@ export class UserEntity {
   @Column()
   password: string;
 
-  @OneToMany(() => TaskEntity, taskEntity => taskEntity.user)
+  @OneToMany(() => TaskEntity, (taskEntity) => taskEntity.user)
   tasks: TaskEntity[];
 }

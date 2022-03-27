@@ -1,6 +1,0 @@
-{
-  "watch": ["src"],
-  "exec": "npm start",
-  "ignore": ["test", "node_modules"],
-  "ext": "ts"
-}

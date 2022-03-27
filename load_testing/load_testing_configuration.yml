@@ -1,0 +1,13 @@
+config:
+  target: "http://localhost:4000"
+  phases:
+    - duration: 30
+      arrivalRate: 1
+      maxVusers: 10
+scenarios:
+    - flow:
+        - post:
+            url: "/login"
+            json:
+              login: "admin"
+              password: "admin"

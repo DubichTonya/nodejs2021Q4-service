@@ -1,7 +1,6 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { UserEntity } from './User';
 import { BoardEntity } from './Board';
-import { ColumnEntity } from './Column';
 
 @Entity()
 export class TaskEntity {
@@ -26,12 +25,14 @@ export class TaskEntity {
   @Column({ nullable: true })
   columnId: string;
 
-  @ManyToOne(() => UserEntity, userEntity => userEntity.tasks, { nullable: true, onDelete: 'SET NULL' })
+  @ManyToOne(() => UserEntity, (userEntity) => userEntity.tasks, {
+    nullable: true,
+    onDelete: 'SET NULL',
+  })
   user: UserEntity | undefined;
 
-  @ManyToOne(() => BoardEntity, boardEntity => boardEntity.tasks, { onDelete: 'CASCADE' })
+  @ManyToOne(() => BoardEntity, (boardEntity) => boardEntity.tasks, {
+    onDelete: 'CASCADE',
+  })
   board: BoardEntity | undefined;
-
-  @ManyToOne(() => ColumnEntity, columnEntity => columnEntity.tasks, { onDelete: 'CASCADE' })
-  column: ColumnEntity | undefined;
 }
